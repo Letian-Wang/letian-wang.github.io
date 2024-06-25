@@ -34,7 +34,9 @@
             position: relative;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 20px 0;
         }
+        
         .timeline::after {
             content: '';
             position: absolute;
@@ -42,46 +44,31 @@
             background-color: #2196F3;
             top: 0;
             bottom: 0;
-            left: 50%;
+            left: 30px;
             margin-left: -3px;
         }
+
         .container {
             padding: 10px 40px;
             position: relative;
             background-color: inherit;
-            width: 50%;
+            width: 100%;
         }
+
         .container::after {
             content: '';
             position: absolute;
             width: 25px;
             height: 25px;
-            right: -17px;
+            left: 15px;
             background-color: white;
             border: 4px solid #2196F3;
             top: 15px;
             border-radius: 50%;
             z-index: 1;
         }
-        .left {
-            left: 0;
-        }
-        .right {
-            left: 50%;
-        }
-        .right::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            right: 30px;
-            border: medium solid white;
-            border-width: 10px 0 10px 10px;
-            border-color: transparent transparent transparent white;
-        }
-        .left::before {
+
+        .container::before {
             content: " ";
             height: 0;
             position: absolute;
@@ -93,27 +80,27 @@
             border-width: 10px 10px 10px 0;
             border-color: transparent white transparent transparent;
         }
-        .right::after {
-            left: -16px;
-        }
-        .left::after {
-            right: -16px;
-        }
+
         .content {
             padding: 20px 30px;
             background-color: white;
             position: relative;
             border-radius: 6px;
+            margin-left: 60px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
         .content img {
             width: 50px;
             height: auto;
             vertical-align: middle;
             margin-right: 10px;
         }
+
         .date {
             font-size: 16px;
             font-weight: bold;
+            margin-bottom: 10px;
         }
     </style>
   </head>
@@ -160,56 +147,10 @@
         </div>
       </div>
 
-
-    <div class="timeline">
-        <div class="container left">
-            <div class="content">
-                <div class="date">2024 -</div>
-                <img src="images/nvidia_logo.jpg" alt="NVIDIA">
-                <p>I am a Research Scientist at the Autonomous Vehicle Group of NVIDIA Research. I work on the closed-loop simulation and safety for autonomous systems.</p>
-            </div>
-        </div>
-        <div class="container right">
-            <div class="content">
-                <div class="date">2019 - 2024</div>
-                <img src="images/cmu_logo.png" alt="Carnegie Mellon University">
-                <p>My Ph.D. research focused on safety-critical scenarios generation. My thesis title is "Generative AI for Critical Digital Twins".</p>
-            </div>
-        </div>
-        <!-- <div class="container left">
-            <div class="content">
-                <div class="date">2023 - 2023</div>
-                <img src="nvidia-logo.png" alt="NVIDIA">
-                <p>I was a Research Intern in the Autonomous Vehicle Group led by Prof. Marco Pavone. I collaborated with Chaowei Xiao and Yulong Cao on a scenario generation project.</p>
-            </div>
-        </div>
-        <div class="container right">
-            <div class="content">
-                <div class="date">2022 - 2022</div>
-                <img src="amazon-logo.png" alt="Amazon">
-                <p>I was an Applied Scientist Intern of the Astro team at Lab126, where I collaborated with Nathalie Majcherczyk and Mohit Deshpande on the active perception project.</p>
-            </div>
-        </div>
-        <div class="container left">
-            <div class="content">
-                <div class="date">2021 - 2021</div>
-                <img src="bosch-logo.png" alt="Bosch">
-                <p>I was a Machine Learning Research Intern at Bosch Center for Artificial Intelligence, where I worked on traffic flow analysis and clustering.</p>
-            </div>
-        </div>
-        <div class="container right">
-            <div class="content">
-                <div class="date">2014 - 2018</div>
-                <img src="tsinghua-logo.png" alt="Tsinghua University">
-                <p>I received my Bachelor degree from the Department of Electronic Engineering at Tsinghua University. I was a member of the Spark Program and a former leader of Skyworks.</p>
-            </div>
-        </div> -->
-    </div>
-
       <div id="filters" class="button-group">
         <!-- <button class="button" data-filter="*">Show All</button> -->
         <button class="button is-checked" data-filter=".highlight">Highlights</button>
-        <button class="button" data-filter=".publication">Experience</button>
+        <button class="button" data-filter=".experience">Experience</button>
         <button class="button" data-filter=".publication">Research</button>
         <button class="button" data-filter=".talk">Talks</button>
         <button class="button" data-filter=".misc">Misc</button>
@@ -430,6 +371,23 @@
           <a id="toggle_highlights_button" href="javascript:toggle_highlights()">Show more</a>
         </div>
 
+        <!-- Experiences -->
+        <div class="timeline" data-category="experience">
+            <div class="container left">
+                <div class="content">
+                    <div class="date">2024 -</div>
+                    <img src="images/nvidia_logo.jpg" alt="NVIDIA">
+                    <p>I am a Research Scientist at the Autonomous Vehicle Group of NVIDIA Research. I work on the closed-loop simulation and safety for autonomous systems.</p>
+                </div>
+            </div>
+            <div class="container right">
+                <div class="content">
+                    <div class="date">2019 - 2024</div>
+                    <img src="images/cmu_logo.png" alt="Carnegie Mellon University">
+                    <p>My Ph.D. research focused on safety-critical scenarios generation. My thesis title is "Generative AI for Critical Digital Twins".</p>
+                </div>
+            </div>
+        </div>
 
 
 
