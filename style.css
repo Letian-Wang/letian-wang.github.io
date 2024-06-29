@@ -197,7 +197,6 @@ h2 {
 
 .previews {
   display: grid; /* Use CSS Grid layout */
-  
   grid-template-columns: repeat(3, 1fr); /* Create 3 equal-width columns */
   gap: 10px; /* Space of 10px between grid items */
   grid-template-rows: repeat(2, auto); /* Explicitly create 2 rows */
