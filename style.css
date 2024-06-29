@@ -213,7 +213,7 @@ h2 {
 .preview1 {
   grid-column: 1; /* Place this item in the first column */
   grid-row: 1; /* Place in the first row */
-  width: 100%; /* Make it take the full width of its grid cell */
+  width: 90%; /* Make it take the full width of its grid cell */
 }
 .preview2 {
   grid-column: 2; /* Place this item in the second column */
@@ -223,12 +223,12 @@ h2 {
 .preview3 {
   grid-column: 3; /* Place this item in the second column */
   grid-row: 1; /* Place in the second row */
-  width: 100%; /* Make it take the full width of its grid cell */
+  width: 90%; /* Make it take the full width of its grid cell */
 }
 .preview4 {
   grid-column: 3; /* Place this item in the third column */
   grid-row: 2; /* Place in the first row */
-  width: 100%; /* Make it take the full width of its grid cell */
+  width: 90%; /* Make it take the full width of its grid cell */
 }
 
 /**************************************************/
