@@ -197,12 +197,10 @@ h2 {
 
 .previews {
   display: grid; /* Use CSS Grid layout */
-  grid-template-columns: 100px 100px 100px;
-  grid-template-rows: 100px 100px;
+  
+  grid-template-columns: repeat(3, 1fr); /* Create 3 equal-width columns */
   gap: 10px; /* Space of 10px between grid items */
-
-  /* grid-template-columns: repeat(3, 1fr); Create 3 equal-width columns */
-  /* grid-template-rows: repeat(2, auto); Explicitly create 2 rows */
+  grid-template-rows: repeat(2, auto); /* Explicitly create 2 rows */
 }
 
 .previews video {
