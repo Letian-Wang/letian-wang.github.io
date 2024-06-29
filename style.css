@@ -196,36 +196,39 @@ h2 {
 /* Gallery of 3 preview videos. */
 
 .previews {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  height: 12.5em;
+  display: grid; /* Use CSS Grid layout */
+  grid-template-columns: repeat(3, 1fr); /* Create 3 equal-width columns */
+  gap: 10px; /* Space of 10px between grid items */
+  grid-template-rows: repeat(2, auto); /* Explicitly create 2 rows */
 }
 
 .previews video {
-  border-radius: 5px;
+  border-radius: 5px; /* Add rounded corners with a radius of 5px */
 }
 
 .previews a:hover {
-  border: none;
+  border: none; /* Remove any border when hovering over the links */
 }
 
 .preview1 {
-  grid-column: 1;
-  height: 100%;
+  grid-column: 1; /* Place this item in the first column */
+  grid-row: 1; /* Place in the first row */
+  width: 100%; /* Make it take the full width of its grid cell */
 }
 .preview2 {
-  grid-column: 2;
-  height: 100%;
+  grid-column: 2; /* Place this item in the second column */
+  grid-row: 1; /* Place in the first row */
+  width: 100%; /* Make it take the full width of its grid cell */
 }
 .preview3 {
-  grid-column: 3;
-  height: 50%;
+  grid-column: 3; /* Place this item in the second column */
+  grid-row: 1; /* Place in the second row */
+  width: 100%; /* Make it take the full width of its grid cell */
 }
 .preview4 {
-  grid-column: 3;
-  height: 50%;
+  grid-column: 3; /* Place this item in the third column */
+  grid-row: 2; /* Place in the first row */
+  width: 100%; /* Make it take the full width of its grid cell */
 }
 
 /**************************************************/
