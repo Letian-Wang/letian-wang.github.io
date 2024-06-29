@@ -220,6 +220,10 @@ h2 {
   width: 100%;
 }
 .preview3 {
+  grid-column: 2;
+  width: 100%;
+}
+.preview4 {
   grid-column: 3;
   width: 100%;
 }
