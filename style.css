@@ -289,6 +289,8 @@ h3 a:hover {
 
 .publication {
   margin-bottom: 0.5em;
+  display: flex;
+  align-items: center;
 }
 
 .publication p {
