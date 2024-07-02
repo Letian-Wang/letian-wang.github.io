@@ -1,801 +1,864 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <!-- Google analytics tag (gtag.js) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-STGLQW4BJX"></script> -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-STGLQW4BJX');
-    </script>
 
-    <!-- Title -->
-    <title>Letian Wang</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=1000">
+<head>
+  <!-- Google analytics tag (gtag.js) -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-STGLQW4BJX"></script> -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-STGLQW4BJX');
+  </script>
 
-    <!-- Isotope JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <!-- Title -->
+  <title>Letian Wang</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1000">
 
-    <!-- Custom Style -->
-    <link rel="stylesheet" href="style.css">
+  <!-- Isotope JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="style.css">
 
-      .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: #2196F3;
-            top: 0;
-            bottom: 0;
-            left: 30px;
-            margin-left: -3px;
-        }
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-        .container {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 100%;
-        }
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
 
-        .container::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            left: 15px;
-            background-color: white;
-            border: 4px solid #2196F3;
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: #0d5dce;
+      top: 0;
+      bottom: 0;
+      left: 30px;
+      margin-left: -3px;
+    }
 
-        .container::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            left: 30px;
-            border: medium solid white;
-            border-width: 10px 10px 10px 0;
-            border-color: transparent white transparent transparent;
-        }
+    .experience::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      background-color: #abadb3;
+      top: 0px;
+      bottom: 0;
+      left: 3px;
+      margin: 20px 0px;
+      margin-left: -3px;
+    }
 
-        .content {
-            padding: 20px 30px;
-            background-color: white;
-            position: relative;
-            border-radius: 6px;
-            margin-left: 60px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    .container {
+      padding: 10px 0px;
+      position: relative;
+      background-color: inherit;
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
 
-        .content img {
-            width: 50px;
-            height: auto;
-            vertical-align: middle;
-            margin-right: 10px;
-        }
+    .container img {
+      width: 50px;
+      padding: 0px 20px 0px 30px;
+      justify-self: left;
+    }
 
-        .date {
-            font-size: 16px;
-            font-weight: bold;
-            /* margin-bottom: 10px; */
-        }
-    </style>
-  </head>
+    .container::after {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      left: -4px;
+      background-color: #5b5c5f;
+      border: 2px solid #5b5c5f;
+      border-radius: 50%;
+      z-index: 1;
+    }
 
-  <body id="body">
+    /* .container::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    } */
 
-    <div id="main">
-      <div id="intro">
-        <div id="intro-text">
-          <h1>Letian Wang</h1>
-          <p>
-            Hi there! I'm a Ph.D. student at the University of Toronto, where I am so fortunate to be supervised by the brilliant <a href="https://www.trailab.utias.utoronto.ca/stevenwaslander">Prof. Steven Waslander</a> (Nicest Steve Ever!) in the <a href="https://www.trailab.utias.utoronto.ca/">TRAIL Lab</a>. I'm affiliated with <a href="https://vectorinstitute.ai/">Vector Institute</a>. 
-            I was a research assistant at 
-            <a href="https://www.ri.cmu.edu/">CMU RI</a>,
-            <a href="https://www.berkeley.edu/">UC Berkeley</a>, and
-            <a href="https://ri.hkust.edu.hk/">HKUST RI</a>, 
-            and a research intern at 
-            <a href="https://research.nvidia.com/labs/avg/">NVIDIA Research</a> and
-            <a href="https://www.sensetime.com/en">SenseTime Research</a>. 
-            <br><br>
-            My research interests include 3D vision, end-to-end driving, human-robot interaction, and behavior prediction. I recently focus on developping generalizable decision-making and scalable perception systems, powered by foundation models and learning paradigm that scales well with data.
-          </p>
-            <div id="more-bio" style="display: None">
-              <br>
-              <p> Letian Wang is a Ph.D. student at the University of Toronto, supervised by <a href="https://www.trailab.utias.utoronto.ca/stevenwaslander">Prof. Steven Waslander</a>. 
-                He was previously a research assistant at UC Berkeley and Carnegie Mellon University, and received his Master’s and Bachelor’s degree with the highest honor from Beihang University in China. He was previously a research intern at Nvidia and SenseTime.
-                <br>
-                His research interests lie in the intersection between autonomous driving, robotics, machine learning, computer vision, with special interest in 3D reconstuction, end-to-end driving, human-robot interaction, behavior prediction. His recent focuses on generalizable decision-making and scalable perception for autonomous driving.
-                <br>
-                He has authored 1 book, was the winner of 2022 CARLA autonomous driving challenge, and won the best paper award honorable mention at RA-L 2021, first prize in the National Challenge Cup 2017 (全国挑战杯一等奖, known as the Olympics of science and technology competition for university students in China), and co-founded a start-up in industrial UAVs.
-              </p>
-            </div>
+    .content {
+      padding: 20px 30px;
+      background-color: white;
+      position: relative;
+      border-radius: 6px;
+      /* margin-left: 60px; */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .content img {
+      width: 50px;
+      height: auto;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    /* .date {
+      font-size: 16px;
+      font-weight: bold;
+      /* margin-bottom: 10px;
+    } */
+
+  </style>
+</head>
+
+<body id="body">
+
+  <div id="main">
+    <div id="intro">
+      <div id="intro-text">
+        <h1>Letian Wang</h1>
+        <p>
+          Hi there! I'm a Ph.D. student at the University of Toronto, where I am so fortunate to be supervised by the
+          brilliant <a href="https://www.trailab.utias.utoronto.ca/stevenwaslander">Prof. Steven Waslander</a> (Nicest
+          Steve Ever!) in the <a href="https://www.trailab.utias.utoronto.ca/">TRAIL Lab</a>. I'm affiliated with <a
+            href="https://vectorinstitute.ai/">Vector Institute</a>.
+          I was a research assistant at
+          <a href="https://www.ri.cmu.edu/">CMU RI</a>,
+          <a href="https://www.berkeley.edu/">UC Berkeley</a>, and
+          <a href="https://ri.hkust.edu.hk/">HKUST RI</a>,
+          and a research intern at
+          <a href="https://research.nvidia.com/labs/avg/">NVIDIA Research</a> and
+          <a href="https://www.sensetime.com/en">SenseTime Research</a>.
+          <br><br>
+          My research interests include 3D vision, end-to-end driving, human-robot interaction, and behavior prediction.
+          I recently focus on developping generalizable decision-making and scalable perception systems, powered by
+          foundation models and learning paradigm that scales well with data.
+        </p>
+        <div id="more-bio" style="display: None">
+          <br>
+          <p> Letian Wang is a Ph.D. student at the University of Toronto, supervised by <a
+              href="https://www.trailab.utias.utoronto.ca/stevenwaslander">Prof. Steven Waslander</a>.
+            He was previously a research assistant at UC Berkeley and Carnegie Mellon University, and received his
+            Master’s and Bachelor’s degree with the highest honor from Beihang University in China. He was previously a
+            research intern at Nvidia and SenseTime.
             <br>
-            <a href="javascript:toggle_bio()">Formal Bio</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://scholar.google.com/citations?hl=en&user=HEzCWisAAAAJ">G. Scholar</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://github.com/Letian-Wang">Github</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://www.linkedin.com/in/letian-wang-17727519a/">LinkedIn</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://x.com/Letian_Wang_666">Twitter</a>
-            <br><br>
-            letianwang0 at gmail dot com
-            <br><br>
+            His research interests lie in the intersection between autonomous driving, robotics, machine learning,
+            computer vision, with special interest in 3D reconstuction, end-to-end driving, human-robot interaction,
+            behavior prediction. His recent focuses on generalizable decision-making and scalable perception for
+            autonomous driving.
+            <br>
+            He has authored 1 book, was the winner of 2022 CARLA autonomous driving challenge, and won the best paper
+            award honorable mention at RA-L 2021, first prize in the National Challenge Cup 2017 (全国挑战杯一等奖, known as the
+            Olympics of science and technology competition for university students in China), and co-founded a start-up
+            in industrial UAVs.
           </p>
         </div>
-        <div id="intro-image">
-          <img src="images/profile.jpg">
-        </div>
+        <br>
+        <a href="javascript:toggle_bio()">Formal Bio</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://scholar.google.com/citations?hl=en&user=HEzCWisAAAAJ">G. Scholar</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://github.com/Letian-Wang">Github</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://www.linkedin.com/in/letian-wang-17727519a/">LinkedIn</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="https://x.com/Letian_Wang_666">Twitter</a>
+        <br><br>
+        letianwang0 at gmail dot com
+        <br><br>
+        </p>
+      </div>
+      <div id="intro-image">
+        <img src="images/profile.jpg">
+      </div>
+    </div>
+
+    <div id="filters" class="button-group">
+      <!-- <button class="button" data-filter="*">Show All</button> -->
+      <button class="button is-checked" data-filter=".highlight">Highlights</button>
+      <button class="button" data-filter=".experience">Experience</button>
+      <button class="button" data-filter=".publication">Research</button>
+      <button class="button" data-filter=".talk">Talks</button>
+      <button class="button" data-filter=".misc">Misc</button>
+    </div>
+
+    <div class="grid">
+
+      <!-- Highlights -->
+      <div class="list-item highlight description" data-category="highlight">
+        Some recent highlights from our research:
       </div>
 
-      <div id="filters" class="button-group">
-        <!-- <button class="button" data-filter="*">Show All</button> -->
-        <button class="button is-checked" data-filter=".highlight">Highlights</button>
-        <button class="button" data-filter=".experience">Experience</button>
-        <button class="button" data-filter=".publication">Research</button>
-        <button class="button" data-filter=".talk">Talks</button>
-        <button class="button" data-filter=".misc">Misc</button>
-      </div>
+      <!-- Preview Videos -->
+      <div class="list-item highlight" data-category="highlight">
+        <div class="previews" style="height: 250px;">
+          <a href="https://distillnerf.github.io/"
+            style="display: flex;align-items: center;justify-content: center;"><video class="preview1" playsinline=""
+              muted="" autoplay="" loop="" style="width: 250px;">
+              <source src="images/distillnerf.mp4" type="video/mp4">
+            </video></a>
 
-      <div class="grid">
-
-        <!-- Highlights -->
-        <div class="list-item highlight description" data-category="highlight">
-          Some recent highlights from our research:
-        </div>
-
-        <!-- Preview Videos -->
-        <div class="list-item highlight previews" data-category="highlight">
-
-          <a href="https://distillnerf.github.io/"><video class="preview1" playsinline="" muted="" autoplay="" loop=""><source src="images/distillnerf.mp4" type="video/mp4"></video></a>
-
-          <a href="https://hao-shao.com/projects/lmdrive.html"><video class="preview2" playsinline="" muted="" autoplay="" loop=""><source src="images/lmdrive.mp4" type="video/mp4"></video></a>
+          <a href="https://hao-shao.com/projects/lmdrive.html"
+            style="display: flex;align-items: center;justify-content: center;"><video class="preview2" playsinline=""
+              muted="" autoplay="" loop="">
+              <source src="images/lmdrive.mp4" type="video/mp4">
+            </video></a>
 
           <div>
-          <a href="https://github.com/Letian-Wang/asaprl"><video class="preview3" playsinline="" muted="" autoplay="" loop=""><source src="images/asaprl.mp4" type="video/mp4"></video></a>
-          <a href="https://arxiv.org/pdf/2010.14712"><video class="preview4" playsinline="" muted="" autoplay="" loop=""><source src="images/social.mp4" type="video/mp4"></video></a>  
+            <a href="https://github.com/Letian-Wang/asaprl"><video class="preview3" playsinline="" muted="" autoplay=""
+                loop="">
+                <source src="images/asaprl.mp4" type="video/mp4">
+              </video></a>
+            <a href="https://arxiv.org/pdf/2010.14712"><video class="preview4" playsinline="" muted="" autoplay=""
+                loop="">
+                <source src="images/social.mp4" type="video/mp4">
+              </video></a>
+
           </div>
-          
-          
+        </div>
+      </div>
+
+      <!-- Truncated Set of Highlights (Shown by Default) -->
+      <div id="main-highlights">
+
+        <div class="list-item highlight">
+          <b>RA-L</b> <a href="https://arxiv.org/pdf/2010.14712">Best Paper Award Honorable Mention</a>
         </div>
 
-        <!-- Truncated Set of Highlights (Shown by Default) -->
-        <div id="main-highlights">
-
-          <div class="list-item highlight" data-category="highlight">
-            <b>RA-L</b> <a href="https://arxiv.org/pdf/2010.14712">Best Paper Award Honorable Mention</a>
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <b>CARLA</b> <a href="https://slideslive.com/38996745/carla-autonomous-driving-challenge-2022">Winner of Autonomous Driving Challenge</a>
-            <a href="https://arxiv.org/pdf/2305.10507">[CVPR'23]</a>
-            <a href="https://arxiv.org/pdf/2207.14024">[CoRL'22]</a>
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <b>CVPR'24</b> <a href="https://hao-shao.com/projects/lmdrive.html">The first work bringing LLM into closed-loop end-to-end autonomous driving</a>
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <b>Book</b> <a href="https://www.nowpublishers.com/article/Details/ROB-078">Social Interactions for Autonomous Driving (Published by Foundation and Trends)</a>
-          </div>
-
+        <div class="list-item highlight" data-category="highlight">
+          <b>CARLA</b> <a href="https://slideslive.com/38996745/carla-autonomous-driving-challenge-2022">Winner of
+            Autonomous Driving Challenge</a>
+          <a href="https://arxiv.org/pdf/2305.10507">[CVPR'23]</a>
+          <a href="https://arxiv.org/pdf/2207.14024">[CoRL'22]</a>
         </div>
 
-        <!-- All Archived Highlights (Click to Show) -->
-        <div id="more-highlights" style="display: None">
-
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date">2024</p>
-            <a href="https://hao-shao.com/projects/lmdrive.html">LmDrive</a> and <a href="https://github.com/opendilab/SmartRefine">SmartRefine</a> get accepted to CVPR 
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date">2023</p>
-            Check our <a href="https://hao-shao.com/projects/lmdrive.html">LmDrive</a>, the <span style="color: red; font-weight: bold;">first work</span> bringing LLM into closed-loop end-to-end autonomous driving.
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date"></p>
-            I start my internship in <a href="https://research.nvidia.com/labs/avg/">NVIDIA Research Autonomous Vehicle Research Group</a>.
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date"></p>
-            Invited by zdjszx.com to give a <a href="https://course.zhidx.com/c/MmI0ZWMzMjFjZjM3NDRjYzEwYzM=">public course</a> on Intelligent/Generalizable Decision Making in Dense Environment.
-          </div>
-          
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date"></p>
-            Our <a href="https://github.com/Letian-Wang/asaprl">ASAP-RL</a> on efficient reinforcement learning for autonomous driving is accepted by RSS.
-          </div>
-          
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date"></p>
-            Our <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Shao_ReasonNet_End-to-End_Driving_With_Temporal_and_Global_Reasoning_CVPR_2023_paper.pdf">ReasonNet</a> on end-to-end driving with temporal and global reasoning is accepted by CVPR.
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date">2022</p>
-            Our <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Shao_ReasonNet_End-to-End_Driving_With_Temporal_and_Global_Reasoning_CVPR_2023_paper.pdf">ReasonNet</a> stands out as the <span style="color: red; font-weight: bold;">Winner of CARLA Autonomous Driving Challenge</span>.
-          </div>
-          
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date"></p>
-            Our <span style="color: red; font-weight: bold;">book</span> on <a href="https://www.nowpublishers.com/article/Details/ROB-078"></a>Social Interactions for Autonomous Driving</a> is published by Foundations and Trends in Robotics.
-          </div>
-          
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date"></p>
-            Our <a href="https://github.com/opendilab/InterFuser">Interfuser</a> is ranked <span style="color: red; font-weight: bold;">first place</span> in the <a href="https://leaderboard.carla.org/leaderboard/">CARLA autonomous driving leaderboard</a>.
-          </div>
-          
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date"></p>
-            <a href="https://arxiv.org/pdf/2010.14712">One paper</a> received the <a href="https://www.ieee-ras.org/publications/ra-l/ra-l-paper-awards"><span style="color: red; font-weight: bold;">Best Paper Award - Honorable Mention</span></a> of RA-L 2021.
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date">2021</p>
-            I'm giving a <a href="https://slideslive.com/38971206/hierarchical-adaptable-and-transferable-networks-hatn-for-driving-behavior-prediction">spotlight talk</a> on <a href="https://ml4ad.github.io/">NeuriPS 2021 Machine Learning for Autonomous Driving Workshop</a>.
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date"></p>
-            I start my internship in <a href="https://www.sensetime.com/en">SenseTime Research XLab</a>.
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date">2020</p>
-            Research assistant at <a href="http://icontrol.ri.cmu.edu/">ICL Lab</a> at <a href="https://www.ri.cmu.edu/">CMU Robotics Institute</a>.
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date">2019</p> 
-            Research assistant at <a href="https://msc.berkeley.edu/">MSC Lab</a> at <a href="https://www.berkeley.edu/">UC Berkeley</a>.
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date"></p>
-            National Scholarship, Beihang University
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date">2018</p> 
-            <span style="color: red; font-weight: bold;">May-Fourth Medal</span>, highest honor for undergraduate at Beihang university.
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date">2017</p> 
-            <span style="color: red; font-weight: bold;">First prize</span> in National Challenge Cup (全国挑战杯一等奖, known as the Olympics of Sci./Tech. for university students in China)
-          </div>
-
-          <div class="list-item highlight" data-category="highlight">
-            <p class="date"></p> 
-            Co-founding a start-up providing industrial UAVs for arial mapping and inspection.
-          </div>
-
+        <div class="list-item highlight" data-category="highlight">
+          <b>CVPR'24</b> <a href="https://hao-shao.com/projects/lmdrive.html">The first work bringing LLM into
+            closed-loop end-to-end autonomous driving</a>
         </div>
 
-        <!-- Toggle highlights button. -->
-        <div class="list-item highlight toggle-button" data-category="highlight">
-          <a id="toggle_highlights_button" href="javascript:toggle_highlights()">Show more</a>
+        <div class="list-item highlight" data-category="highlight">
+          <b>Book</b> <a href="https://www.nowpublishers.com/article/Details/ROB-078">Social Interactions for Autonomous
+            Driving (Published by Foundation and Trends)</a>
         </div>
 
-        <!-- Experiences -->
-        <div class="list-item experience" data-category="experience">
-            <div class="container left">
-                <div class="content">
-                    <div class="date">2023.09 - 2024.06</div>
-                    <img src="images/nvidia_logo.jpg" alt="NVIDIA">
-                    <p>Research intern at the <a href="https://research.nvidia.com/labs/avg/">Autonomous Vehicle Group of NVIDIA Research</a>, with <a href="https://karkus.tilda.ws/">Peter Karkus</a>, <a href="https://seung-kim.github.io/seungkim/">SengWook Kim</a>, <a href="https://www.borisivanovic.com/">Boris Ivanovic</a>, <a href="https://yuewang.xyz/">Yue Wang</a>, <a href="https://www.cs.utoronto.ca/~fidler/">Sanja Fidler</a>, and <a href="https://web.stanford.edu/~pavone/">Marco Pavone</a>. I worked on self-supervised representation learning via neural radiance field for autonomous driving.</p>
-                </div>
-            </div>
+      </div>
 
-            <div class="container left">
-                <div class="content">
-                    <div class="date">2021.05 - 2023.02</div>
-                    <img src="images/sensetime_logo.png" alt="SenseTime Research">
-                    <p> Research intern at <a href="https://www.sensetime.com/en/">X-Lab of SenseTime Research</a>, with <a href="https://liuyu.us/">Yu Liu</a>. I worked on safe end-to-end driving, efficient reinforcement learning for autonomous driving 
-                      [<a href="https://github.com/Letian-Wang/asaprl">RSS'23</a>, 
-                      <a href="https://arxiv.org/pdf/2305.10507">CVPR'23</a>, 
-                      <a href="https://arxiv.org/pdf/2209.12072">IROS'23</a>, 
-                      <a href="https://github.com/opendilab/InterFuser">CORL'22</a>].</p>
-                </div>
-            </div>
+      <!-- All Archived Highlights (Click to Show) -->
+      <div id="more-highlights" style="display: None">
 
-            <div class="container left">
-              <div class="content">
-                  <div class="date">2020.10 - 2021.05</div>
-                  <img src="images/cmu_logo.png" alt="Carnegie Mellon University">
-                  <p>Research assistant at the <a href="http://icontrol.ri.cmu.edu/">ICL Lab</a>, with <a href="https://www.cs.cmu.edu/~cliu6/">Changliu Liu</a>, and <a href="https://yeping-hu.github.io/">Yeping Hu</a>. I worked on generalizable prediction algorithms in different scenarios, and social interaction for autonomous driving. 
-                    [<a href="https://arxiv.org/pdf/2111.00788">NeurIPS'21</a>, 
-                    <a href="https://www.nowpublishers.com/article/Details/ROB-078">book</a>]</p>
-              </div>
-            </div>
-
-            <div class="container left">
-              <div class="content">
-                  <div class="date">2019.10 - 2020.10</div>
-                  <img src="images/berkeley_logo.png" alt="UC Berkeley">
-                  <p>Research assistant at the <a href="https://msc.berkeley.edu/">MSC Lab</a>, with <a href="https://scholar.google.com/citations?user=BitIg-YAAAAJ&hl=en">Liting Sun</a>, <a href="https://zhanwei.site/">Wei Zhan</a>, and <a href="https://scholar.google.com/citations?user=8m8taGEAAAAJ&hl=en">Masayoshi Tomizuka</a>. I worked on socially-compatible behavior generation for autonomous driving [<a href="https://arxiv.org/pdf/2010.14712">RA-L'21</a>]</p>
-              </div>
-            </div>
-
-            <div class="container left">
-              <div class="content">
-                  <div class="date">2018.07 - 2018.09</div>
-                  <img src="images/hkust_logo.jpg" alt="Hong Kong University of Science and Technology">
-                  <p>Research assistant at the <a href="https://ri.hkust.edu.hk/">HKUST RI</a>, with <a href="https://www.mech.hku.hk/academic-staff/zhang-f">Fu Zhang</a>. I worked on unified control strategy for vertically take-off and landing UAVs.</p>
-              </div>
-            </div>
-          
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date">2024</p>
+          <a href="https://hao-shao.com/projects/lmdrive.html">LmDrive</a> and <a
+            href="https://github.com/opendilab/SmartRefine">SmartRefine</a> get accepted to CVPR
         </div>
 
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date">2023</p>
+          Check our <a href="https://hao-shao.com/projects/lmdrive.html">LmDrive</a>, the <span
+            style="color: red; font-weight: bold;">first work</span> bringing LLM into closed-loop end-to-end autonomous
+          driving.
+        </div>
 
-        <!-- Publications -->
-        <div class="list-item publication" data-category="publication">
-          <a href="https://arxiv.org/pdf/2406.12095" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/distillnerf.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/pdf/2406.12095">
-              DistillNeRF: Perceiving 3D Scenes from Single-Glance Images by Distilling Neural Fields and Foundation Model Features
-            </a></h3>
-            <p>
-              <span style="color: black; font-weight: bold;">Letian Wang</span>, Seung Wook Kim, Jiawei Yang, Cunjun Yu, Boris Ivanovic, Steven L Waslander, Yue Wang, Sanja Fidler, Marco Pavone, Peter Karkus<br>
-              <i>Under Review</i><br>
-                <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
-                <a href="https://distillnerf.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://arxiv.org/pdf/2406.12095">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://www.youtube.com/watch?v=Dn1ut0k2r6Y">Video</a>
-                <!-- <a href="https://github.com/opendilab/SmartRefine">Code</a> -->
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date"></p>
+          I start my internship in <a href="https://research.nvidia.com/labs/avg/">NVIDIA Research Autonomous Vehicle
+            Research Group</a>.
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date"></p>
+          Invited by zdjszx.com to give a <a href="https://course.zhidx.com/c/MmI0ZWMzMjFjZjM3NDRjYzEwYzM=">public
+            course</a> on Intelligent/Generalizable Decision Making in Dense Environment.
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date"></p>
+          Our <a href="https://github.com/Letian-Wang/asaprl">ASAP-RL</a> on efficient reinforcement learning for
+          autonomous driving is accepted by RSS.
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date"></p>
+          Our <a
+            href="https://openaccess.thecvf.com/content/CVPR2023/papers/Shao_ReasonNet_End-to-End_Driving_With_Temporal_and_Global_Reasoning_CVPR_2023_paper.pdf">ReasonNet</a>
+          on end-to-end driving with temporal and global reasoning is accepted by CVPR.
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date">2022</p>
+          Our <a
+            href="https://openaccess.thecvf.com/content/CVPR2023/papers/Shao_ReasonNet_End-to-End_Driving_With_Temporal_and_Global_Reasoning_CVPR_2023_paper.pdf">ReasonNet</a>
+          stands out as the <span style="color: red; font-weight: bold;">Winner of CARLA Autonomous Driving
+            Challenge</span>.
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date"></p>
+          Our <span style="color: red; font-weight: bold;">book</span> on <a
+            href="https://www.nowpublishers.com/article/Details/ROB-078"></a>Social Interactions for Autonomous
+          Driving</a> is published by Foundations and Trends in Robotics.
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date"></p>
+          Our <a href="https://github.com/opendilab/InterFuser">Interfuser</a> is ranked <span
+            style="color: red; font-weight: bold;">first place</span> in the <a
+            href="https://leaderboard.carla.org/leaderboard/">CARLA autonomous driving leaderboard</a>.
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date"></p>
+          <a href="https://arxiv.org/pdf/2010.14712">One paper</a> received the <a
+            href="https://www.ieee-ras.org/publications/ra-l/ra-l-paper-awards"><span
+              style="color: red; font-weight: bold;">Best Paper Award - Honorable Mention</span></a> of RA-L 2021.
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date">2021</p>
+          I'm giving a <a
+            href="https://slideslive.com/38971206/hierarchical-adaptable-and-transferable-networks-hatn-for-driving-behavior-prediction">spotlight
+            talk</a> on <a href="https://ml4ad.github.io/">NeuriPS 2021 Machine Learning for Autonomous Driving
+            Workshop</a>.
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date"></p>
+          I start my internship in <a href="https://www.sensetime.com/en">SenseTime Research XLab</a>.
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date">2020</p>
+          Research assistant at <a href="http://icontrol.ri.cmu.edu/">ICL Lab</a> at <a
+            href="https://www.ri.cmu.edu/">CMU Robotics Institute</a>.
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date">2019</p>
+          Research assistant at <a href="https://msc.berkeley.edu/">MSC Lab</a> at <a
+            href="https://www.berkeley.edu/">UC Berkeley</a>.
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date"></p>
+          National Scholarship, Beihang University
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date">2018</p>
+          <span style="color: red; font-weight: bold;">May-Fourth Medal</span>, highest honor for undergraduate at
+          Beihang university.
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date">2017</p>
+          <span style="color: red; font-weight: bold;">First prize</span> in National Challenge Cup (全国挑战杯一等奖, known as
+          the Olympics of Sci./Tech. for university students in China)
+        </div>
+
+        <div class="list-item highlight" data-category="highlight">
+          <p class="date"></p>
+          Co-founding a start-up providing industrial UAVs for arial mapping and inspection.
+        </div>
+
+      </div>
+
+      <!-- Toggle highlights button. -->
+      <div class="list-item highlight toggle-button" data-category="highlight">
+        <a id="toggle_highlights_button" href="javascript:toggle_highlights()">Show more</a>
+      </div>
+
+      <!-- Experiences -->
+      <div class="list-item experience" data-category="experience">
+        <div class="container left">
+          <img src="images/nvidia_logo.jpg" alt="NVIDIA">
+          <div class="content">
+            <div class="date">2023.09 - 2024.06</div>
+
+            <p>Research intern at the <a href="https://research.nvidia.com/labs/avg/">Autonomous Vehicle Group of NVIDIA
+                Research</a>, with <a href="https://karkus.tilda.ws/">Peter Karkus</a>, <a
+                href="https://seung-kim.github.io/seungkim/">SengWook Kim</a>, <a
+                href="https://www.borisivanovic.com/">Boris Ivanovic</a>, <a href="https://yuewang.xyz/">Yue Wang</a>,
+              <a href="https://www.cs.utoronto.ca/~fidler/">Sanja Fidler</a>, and <a
+                href="https://web.stanford.edu/~pavone/">Marco Pavone</a>. I worked on self-supervised representation
+              learning via neural radiance field for autonomous driving.
             </p>
           </div>
         </div>
 
-        <div class="list-item publication" data-category="publication">
-          <a href="https://arxiv.org/pdf/2403.16999" class="thumbnail">
-            <img src="images/cot.png" alt="" />
-          </a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/pdf/2403.16999">
+        <div class="container left">
+          <img src="images/sensetime_logo.png" alt="SenseTime Research">
+
+          <div class="content">
+            <div class="date">2021.05 - 2023.02</div>
+            <p> Research intern at <a href="https://www.sensetime.com/en/">X-Lab of SenseTime Research</a>, with <a
+                href="https://liuyu.us/">Yu Liu</a>. I worked on safe end-to-end driving, efficient reinforcement
+              learning for autonomous driving
+              [<a href="https://github.com/Letian-Wang/asaprl">RSS'23</a>,
+              <a href="https://arxiv.org/pdf/2305.10507">CVPR'23</a>,
+              <a href="https://arxiv.org/pdf/2209.12072">IROS'23</a>,
+              <a href="https://github.com/opendilab/InterFuser">CORL'22</a>].
+            </p>
+          </div>
+        </div>
+
+        <div class="container left">
+          <img src="images/cmu_logo.png" alt="Carnegie Mellon University">
+
+          <div class="content">
+            <div class="date">2020.10 - 2021.05</div>
+            <p>Research assistant at the <a href="http://icontrol.ri.cmu.edu/">ICL Lab</a>, with <a
+                href="https://www.cs.cmu.edu/~cliu6/">Changliu Liu</a> and <a
+                href="https://yeping-hu.github.io/">Yeping Hu</a>. I worked on generalizable motion prediction algorithms in
+              different scenarios, and social interaction for autonomous driving.
+              [<a href="https://arxiv.org/pdf/2111.00788">NeurIPS'21</a>,
+              <a href="https://www.nowpublishers.com/article/Details/ROB-078">book</a>]
+            </p>
+          </div>
+        </div>
+
+        <div class="container left">
+          <img src="images/berkeley_logo.png" alt="UC Berkeley">
+
+          <div class="content">
+            <div class="date">2019.10 - 2020.10</div>
+            <p>Research assistant at the <a href="https://msc.berkeley.edu/">MSC Lab</a>, with <a
+                href="https://scholar.google.com/citations?user=BitIg-YAAAAJ&hl=en">Liting Sun</a>, <a
+                href="https://zhanwei.site/">Wei Zhan</a>, and <a
+                href="https://scholar.google.com/citations?user=8m8taGEAAAAJ&hl=en">Masayoshi Tomizuka</a>. I worked on
+              socially-compatible behavior generation for autonomous driving [<a
+                href="https://arxiv.org/pdf/2010.14712">RA-L'21</a>]</p>
+          </div>
+        </div>
+
+        <div class="container left">
+          <img src="images/hkust_logo.jpg" alt="Hong Kong University of Science and Technology">
+
+          <div class="content">
+            <div class="date">2018.07 - 2018.09</div>
+            <p>Research assistant at the <a href="https://ri.hkust.edu.hk/">HKUST RI</a>, with <a
+                href="https://www.mech.hku.hk/academic-staff/zhang-f">Fu Zhang</a>. I worked on unified control strategy
+              for vertically take-off and landing UAVs.</p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Publications -->
+      <div class="list-item publication" data-category="publication">
+        <a href="https://arxiv.org/pdf/2406.12095" class="thumbnail">
+          <video playsinline="" muted="" autoplay="" loop="" width="180px">
+            <source src="images/distillnerf.mp4" type="video/mp4">
+          </video>
+        </a>
+        <div class="project-description">
+          <h3><a href="https://arxiv.org/pdf/2406.12095">
+              DistillNeRF: Perceiving 3D Scenes from Single-Glance Images by Distilling Neural Fields and Foundation
+              Model Features
+            </a></h3>
+          <p>
+            <span style="color: black; font-weight: bold;">Letian Wang</span>, Seung Wook Kim, Jiawei Yang, Cunjun Yu,
+            Boris Ivanovic, Steven L Waslander, Yue Wang, Sanja Fidler, Marco Pavone, Peter Karkus<br>
+            <i>Under Review</i><br>
+            <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
+            <a href="https://distillnerf.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a href="https://arxiv.org/pdf/2406.12095">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a href="https://www.youtube.com/watch?v=Dn1ut0k2r6Y">Video</a>
+            <!-- <a href="https://github.com/opendilab/SmartRefine">Code</a> -->
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
+        </div>
+      </div>
+
+      <div class="list-item publication" data-category="publication">
+        <a href="https://arxiv.org/pdf/2403.16999" class="thumbnail">
+          <img src="images/cot.png" alt="" />
+        </a>
+        <div class="project-description">
+          <h3><a href="https://arxiv.org/pdf/2403.16999">
               Visual CoT: Unleashing Chain-of-Thought Reasoning in Multi-Modal Language Models
             </a></h3>
-            <p>
-              Hao Shao, Shengju Qian, Han Xiao, Guanglu Song, Zhuofan Zong, <span style="color: black; font-weight: bold;">Letian Wang</span>, Yu Liu, Hongsheng Li<br>
-              <i>Under Review</i><br>
-                <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
-                <!-- <a href="https://hao-shao.com/projects/lmdrive.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
-                <a href="https://arxiv.org/pdf/2403.16999">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <!-- <a href="https://github.com/opendilab/SmartRefine">Code</a> -->
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
-            </p>
-          </div>
+          <p>
+            Hao Shao, Shengju Qian, Han Xiao, Guanglu Song, Zhuofan Zong, <span
+              style="color: black; font-weight: bold;">Letian Wang</span>, Yu Liu, Hongsheng Li<br>
+            <i>Under Review</i><br>
+            <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
+            <!-- <a href="https://hao-shao.com/projects/lmdrive.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
+            <a href="https://arxiv.org/pdf/2403.16999">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <!-- <a href="https://github.com/opendilab/SmartRefine">Code</a> -->
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
         </div>
+      </div>
 
-        <div class="list-item publication" data-category="publication">
-          <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_SmartRefine_A_Scenario-Adaptive_Refinement_Framework_for_Efficient_Motion_Prediction_CVPR_2024_paper.pdf" class="thumbnail">
-            <img src="images/smartrefine.png" alt="" />
-          </a>
-          <div class="project-description">
-            <h3><a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_SmartRefine_A_Scenario-Adaptive_Refinement_Framework_for_Efficient_Motion_Prediction_CVPR_2024_paper.pdf">
+      <div class="list-item publication" data-category="publication">
+        <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_SmartRefine_A_Scenario-Adaptive_Refinement_Framework_for_Efficient_Motion_Prediction_CVPR_2024_paper.pdf"
+          class="thumbnail">
+          <img src="images/smartrefine.png" alt="" />
+        </a>
+        <div class="project-description">
+          <h3><a
+              href="https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_SmartRefine_A_Scenario-Adaptive_Refinement_Framework_for_Efficient_Motion_Prediction_CVPR_2024_paper.pdf">
               SmartRefine: An Scenario-Adaptive Refinement Framework for Efficient Motion Prediction
             </a></h3>
-            <p>
-              Yang Zhou, Hao Shao, <span style="color: black; font-weight: bold;">Letian Wang</span>, Steven L Waslander, Hongsheng Li, Yu Liu<br>
-              <i>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2024)</i><br>
-              <i><span style="color: red;">Outperform all published ensemble-free works on Argoverse 2 leaderboard (single agent track).</span></i><br>
-                <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
-                <!-- <a href="https://hao-shao.com/projects/lmdrive.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
-                <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_SmartRefine_A_Scenario-Adaptive_Refinement_Framework_for_Efficient_Motion_Prediction_CVPR_2024_paper.pdf">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://github.com/opendilab/SmartRefine">Code</a>
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
-            </p>
-          </div>
+          <p>
+            Yang Zhou, Hao Shao, <span style="color: black; font-weight: bold;">Letian Wang</span>, Steven L Waslander,
+            Hongsheng Li, Yu Liu<br>
+            <i>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2024)</i><br>
+            <i><span style="color: red;">Outperform all published ensemble-free works on Argoverse 2 leaderboard (single
+                agent track).</span></i><br>
+            <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
+            <!-- <a href="https://hao-shao.com/projects/lmdrive.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
+            <a
+              href="https://openaccess.thecvf.com/content/CVPR2024/papers/Zhou_SmartRefine_A_Scenario-Adaptive_Refinement_Framework_for_Efficient_Motion_Prediction_CVPR_2024_paper.pdf">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a href="https://github.com/opendilab/SmartRefine">Code</a>
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
         </div>
+      </div>
 
-        <div class="list-item publication" data-category="publication">
-          <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Shao_LMDrive_Closed-Loop_End-to-End_Driving_with_Large_Language_Models_CVPR_2024_paper.pdf" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/lmdrive.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Shao_LMDrive_Closed-Loop_End-to-End_Driving_with_Large_Language_Models_CVPR_2024_paper.pdf">
+      <div class="list-item publication" data-category="publication">
+        <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Shao_LMDrive_Closed-Loop_End-to-End_Driving_with_Large_Language_Models_CVPR_2024_paper.pdf"
+          class="thumbnail">
+          <video playsinline="" muted="" autoplay="" loop="" width="180px">
+            <source src="images/lmdrive.mp4" type="video/mp4">
+          </video>
+        </a>
+        <div class="project-description">
+          <h3><a
+              href="https://openaccess.thecvf.com/content/CVPR2024/papers/Shao_LMDrive_Closed-Loop_End-to-End_Driving_with_Large_Language_Models_CVPR_2024_paper.pdf">
               LmDrive: Closed-Loop End-to-End Driving with Large Language Models
             </a></h3>
-            <p>
-              Hao Shao, Yuxuan Hu, <span style="color: black; font-weight: bold;">Letian Wang</span>, Steven L Waslander, Yu Liu, Hongsheng Li<br>
-              <i>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2024)</i><br>
-              <i><span style="color: red;">First work to bring LLM into closed-loop end-to-end autonomous driving.</span></i><br>
-                <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
-                <a href="https://hao-shao.com/projects/lmdrive.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Shao_LMDrive_Closed-Loop_End-to-End_Driving_with_Large_Language_Models_CVPR_2024_paper.pdf">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://github.com/opendilab/LMDrive">Code</a>
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
-            </p>
-          </div>
+          <p>
+            Hao Shao, Yuxuan Hu, <span style="color: black; font-weight: bold;">Letian Wang</span>, Steven L Waslander,
+            Yu Liu, Hongsheng Li<br>
+            <i>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR 2024)</i><br>
+            <i><span style="color: red;">First work to bring LLM into closed-loop end-to-end autonomous
+                driving.</span></i><br>
+            <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
+            <a href="https://hao-shao.com/projects/lmdrive.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a
+              href="https://openaccess.thecvf.com/content/CVPR2024/papers/Shao_LMDrive_Closed-Loop_End-to-End_Driving_with_Large_Language_Models_CVPR_2024_paper.pdf">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a href="https://github.com/opendilab/LMDrive">Code</a>
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
         </div>
+      </div>
 
-        <div class="list-item publication" data-category="publication">
-          <a href="https://arxiv.org/pdf/2209.12072" class="thumbnail">
-            <img src="images/taecrl.png" alt="" />
-          </a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/pdf/2209.12072">
-              Accelerating Reinforcement Learning for Autonomous Driving using Task-Agnostic and Ego-Centric Motion Skills
+      <div class="list-item publication" data-category="publication">
+        <a href="https://arxiv.org/pdf/2209.12072" class="thumbnail">
+          <img src="images/taecrl.png" alt="" />
+        </a>
+        <div class="project-description">
+          <h3><a href="https://arxiv.org/pdf/2209.12072">
+              Accelerating Reinforcement Learning for Autonomous Driving using Task-Agnostic and Ego-Centric Motion
+              Skills
             </a></h3>
-            <p>
-              Tong Zhou*, <span style="color: black; font-weight: bold;">Letian Wang*</span>, Ruobing Chen, Wenshuo Wang, Yu Liu<br>
-              <i>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2023)</i><br>
-                <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
-                <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
-                <a href="https://arxiv.org/pdf/2209.12072">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <!-- <a href="https://github.com/Letian-Wang/asaprl">Code</a> -->
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
-            </p>
-          </div>
+          <p>
+            Tong Zhou*, <span style="color: black; font-weight: bold;">Letian Wang*</span>, Ruobing Chen, Wenshuo Wang,
+            Yu Liu<br>
+            <i>IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2023)</i><br>
+            <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
+            <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
+            <a href="https://arxiv.org/pdf/2209.12072">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <!-- <a href="https://github.com/Letian-Wang/asaprl">Code</a> -->
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
         </div>
+      </div>
 
-        <div class="list-item publication" data-category="publication">
-          <a href="https://arxiv.org/pdf/2305.04412" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/asaprl.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/pdf/2305.04412">
+      <div class="list-item publication" data-category="publication">
+        <a href="https://arxiv.org/pdf/2305.04412" class="thumbnail">
+          <video playsinline="" muted="" autoplay="" loop="" width="180px">
+            <source src="images/asaprl.mp4" type="video/mp4">
+          </video>
+        </a>
+        <div class="project-description">
+          <h3><a href="https://arxiv.org/pdf/2305.04412">
               Efficient Reinforcement Learning for Autonomous Driving with Parameterized Skills and Priors
             </a></h3>
-            <p>
-              <span style="color: black; font-weight: bold;">Letian Wang</span>, Jie Liu, Hao Shao, Wenshuo Wang, Ruobing Chen, Yu Liu, Steven L Waslander<br>
-              <i>Robotics: Science and Systems (RSS 2023)</i><br>
-                <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
-                <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
-                <a href="https://arxiv.org/pdf/2305.04412">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://github.com/Letian-Wang/asaprl">Code</a>
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
-            </p>
-          </div>
+          <p>
+            <span style="color: black; font-weight: bold;">Letian Wang</span>, Jie Liu, Hao Shao, Wenshuo Wang, Ruobing
+            Chen, Yu Liu, Steven L Waslander<br>
+            <i>Robotics: Science and Systems (RSS 2023)</i><br>
+            <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
+            <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
+            <a href="https://arxiv.org/pdf/2305.04412">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a href="https://github.com/Letian-Wang/asaprl">Code</a>
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
         </div>
+      </div>
 
-        <div class="list-item publication" data-category="publication">
-          <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Shao_ReasonNet_End-to-End_Driving_With_Temporal_and_Global_Reasoning_CVPR_2023_paper.pdf" class="thumbnail">
-            <img src="images/reasonnet.png" alt="" />
-          </a>
-          <div class="project-description">
-            <h3><a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Shao_ReasonNet_End-to-End_Driving_With_Temporal_and_Global_Reasoning_CVPR_2023_paper.pdf">
+      <div class="list-item publication" data-category="publication">
+        <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Shao_ReasonNet_End-to-End_Driving_With_Temporal_and_Global_Reasoning_CVPR_2023_paper.pdf"
+          class="thumbnail">
+          <img src="images/reasonnet.png" alt="" />
+        </a>
+        <div class="project-description">
+          <h3><a
+              href="https://openaccess.thecvf.com/content/CVPR2023/papers/Shao_ReasonNet_End-to-End_Driving_With_Temporal_and_Global_Reasoning_CVPR_2023_paper.pdf">
               ReasonNet: End-to-End Driving with Temporal and Global Reasoning
             </a></h3>
-            <p>
-              Hao Shao, <span style="color: black; font-weight: bold;">Letian Wang</span>, Ruobing Chen, Steven L Waslander, Hongsheng Li, Yu Liu<br>
-              <i>Conference on Computer Vision and Pattern Recognition (CVPR 2023)</i><br>
-              <i><span style="color: red;">Winner of CARLA Autonomous Driving Challenge 2022</span></i><br>
-                <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
-                <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
-                <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Shao_ReasonNet_End-to-End_Driving_With_Temporal_and_Global_Reasoning_CVPR_2023_paper.pdf">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://github.com/opendilab/DOS">Code</a>
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
-            </p>
-          </div>
+          <p>
+            Hao Shao, <span style="color: black; font-weight: bold;">Letian Wang</span>, Ruobing Chen, Steven L
+            Waslander, Hongsheng Li, Yu Liu<br>
+            <i>Conference on Computer Vision and Pattern Recognition (CVPR 2023)</i><br>
+            <i><span style="color: red;">Winner of CARLA Autonomous Driving Challenge 2022</span></i><br>
+            <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
+            <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
+            <a
+              href="https://openaccess.thecvf.com/content/CVPR2023/papers/Shao_ReasonNet_End-to-End_Driving_With_Temporal_and_Global_Reasoning_CVPR_2023_paper.pdf">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a href="https://github.com/opendilab/DOS">Code</a>
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
         </div>
+      </div>
 
-        <div class="list-item publication" data-category="publication">
-          <a href="https://www.nowpublishers.com/article/Details/ROB-078" class="thumbnail">
-            <img src="images/book1.png" alt="" />
-          </a>
-          <div class="project-description">
-            <h3><a href="https://www.nowpublishers.com/article/Details/ROB-078">
+      <div class="list-item publication" data-category="publication">
+        <a href="https://www.nowpublishers.com/article/Details/ROB-078" class="thumbnail">
+          <img src="images/book1.png" alt="" />
+        </a>
+        <div class="project-description">
+          <h3><a href="https://www.nowpublishers.com/article/Details/ROB-078">
               Social Interactions for Autonomous Driving: A Review and Perspectives
             </a></h3>
-            <p>
-              Wenshuo Wang, <span style="color: black; font-weight: bold;">Letian Wang</span>, Chengyuan Zhang, Changliu Liu, Lijun Sun<br>
-              <i>Foundation and Trends in Robotics</i><br>
-                <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
-                <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
-                <a href="https://www.nowpublishers.com/article/Details/ROB-078">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <!-- <a href="https://github.com/opendilab/InterFuser">Code</a> -->
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
-            </p>
-          </div>
+          <p>
+            Wenshuo Wang, <span style="color: black; font-weight: bold;">Letian Wang</span>, Chengyuan Zhang, Changliu
+            Liu, Lijun Sun<br>
+            <i>Foundation and Trends in Robotics (<span style="color: red;">Book</span>)</i><br>
+            <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
+            <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
+            <a href="https://www.nowpublishers.com/article/Details/ROB-078">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <!-- <a href="https://github.com/opendilab/InterFuser">Code</a> -->
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
         </div>
+      </div>
 
-        <div class="list-item publication" data-category="publication">
-          <a href="https://proceedings.mlr.press/v205/shao23a/shao23a.pdf" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/interfuser.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://proceedings.mlr.press/v205/shao23a/shao23a.pdf">
+      <div class="list-item publication" data-category="publication">
+        <a href="https://proceedings.mlr.press/v205/shao23a/shao23a.pdf" class="thumbnail">
+          <video playsinline="" muted="" autoplay="" loop="" width="180px">
+            <source src="images/interfuser.mp4" type="video/mp4">
+          </video>
+        </a>
+        <div class="project-description">
+          <h3><a href="https://proceedings.mlr.press/v205/shao23a/shao23a.pdf">
               Safety-Enhanced Autonomous Driving Using Interpretable Sensor Fusion Transformer
             </a></h3>
-            <p>
-              Hao Shao*, <span style="color: black; font-weight: bold;">Letian Wang*</span>, Ruobing Chen, Hongsheng Li, Yu Liu<br>
-              <i>Conference on Robot Learning 2022</i><br>
-              <i><span style="color: red;">First Place on the CARLA Leaderboard (Sensor Track)</span></i><br>
-                <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
-                <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
-                <a href="https://proceedings.mlr.press/v205/shao23a/shao23a.pdf">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://github.com/opendilab/InterFuser">Code</a>
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
-            </p>
-          </div>
+          <p>
+            Hao Shao*, <span style="color: black; font-weight: bold;">Letian Wang*</span>, Ruobing Chen, Hongsheng Li,
+            Yu Liu<br>
+            <i>Conference on Robot Learning 2022</i><br>
+            <i><span style="color: red;">First Place on the CARLA Leaderboard (Sensor Track)</span></i><br>
+            <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
+            <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
+            <a href="https://proceedings.mlr.press/v205/shao23a/shao23a.pdf">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <a href="https://github.com/opendilab/InterFuser">Code</a>
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
         </div>
+      </div>
 
-        <div class="list-item publication" data-category="publication">
-          <a href="https://arxiv.org/pdf/2207.03673" class="thumbnail">
-            <img src="images/tree.png" alt="" />
-          </a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/pdf/2207.03673">
+      <div class="list-item publication" data-category="publication">
+        <a href="https://arxiv.org/pdf/2207.03673" class="thumbnail">
+          <img src="images/tree.png" alt="" />
+        </a>
+        <div class="project-description">
+          <h3><a href="https://arxiv.org/pdf/2207.03673">
               Efficient Game-Theoretic Planning with Prediction Heuristic for Socially-Compliant Autonomous Driving
             </a></h3>
-            <p>
-              Chenran Li, Tu Trinh, <span style="color: black; font-weight: bold;">Letian Wang</span>, Changliu Liu, Masayoshi Tomizuka, Wei Zhan<br>
-              <i>IEEE Robotics and Automation Letters 2021</i><br>
-                <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
-                <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
-                <a href="https://arxiv.org/pdf/2207.03673">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <!-- <a href="https://colab.research.google.com/drive/1YcRN_kklw3cVVJNvgK_IEV6nDce9EJWK?usp=sharing">Code</a> -->
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
-            </p>
-          </div>
+          <p>
+            Chenran Li, Tu Trinh, <span style="color: black; font-weight: bold;">Letian Wang</span>, Changliu Liu,
+            Masayoshi Tomizuka, Wei Zhan<br>
+            <i>IEEE Robotics and Automation Letters 2021</i><br>
+            <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
+            <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
+            <a href="https://arxiv.org/pdf/2207.03673">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <!-- <a href="https://colab.research.google.com/drive/1YcRN_kklw3cVVJNvgK_IEV6nDce9EJWK?usp=sharing">Code</a> -->
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
         </div>
+      </div>
 
-        <div class="list-item publication" data-category="publication">
-          <a href="https://embodied-ai.org/papers/2022/14.pdf" class="thumbnail">
-            <img src="images/instruction.png" alt="" />
-          </a>
-          <div class="project-description">
-            <h3><a href="https://embodied-ai.org/papers/2022/14.pdf">
+      <div class="list-item publication" data-category="publication">
+        <a href="https://embodied-ai.org/papers/2022/14.pdf" class="thumbnail">
+          <img src="images/instruction.png" alt="" />
+        </a>
+        <div class="project-description">
+          <h3><a href="https://embodied-ai.org/papers/2022/14.pdf">
               Human Instruction Following: Graph Neural Network Guided Object Navigation
             </a></h3>
-            <p>
-              Hongyi Chen, <span style="color: black; font-weight: bold;">Letian Wang</span>, Yuhang Yao, Ye Zhao, Patricio Vela<br>
-              <i>The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2022, Workshop on Embodied AI</i><br>
-                <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
-                <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
-                <a href="https://embodied-ai.org/papers/2022/14.pdf">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <!-- <a href="https://colab.research.google.com/drive/1YcRN_kklw3cVVJNvgK_IEV6nDce9EJWK?usp=sharing">Code</a> -->
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
-            </p>
-          </div>
+          <p>
+            Hongyi Chen, <span style="color: black; font-weight: bold;">Letian Wang</span>, Yuhang Yao, Ye Zhao,
+            Patricio Vela<br>
+            <i>The IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) 2022, Workshop on Embodied
+              AI</i><br>
+            <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
+            <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
+            <a href="https://embodied-ai.org/papers/2022/14.pdf">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <!-- <a href="https://colab.research.google.com/drive/1YcRN_kklw3cVVJNvgK_IEV6nDce9EJWK?usp=sharing">Code</a> -->
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
+        </div>
+      </div>
+
+      <div class="list-item publication" data-category="publication">
+        <a href="https://arxiv.org/pdf/2202.05140" class="thumbnail">
+          <img src="images/hatn.png" alt="" />
+        </a>
+        <div class="project-description">
+          <h3><a href="https://arxiv.org/pdf/2202.05140">Transferable and Adaptable Driving Behavior Prediction</a></h3>
+          <p>
+            <span style="color: black; font-weight: bold;">Letian Wang</span>, Yeping Hu, Liting Sun, Wei Zhan,
+            Masayoshi Tomizuka, Changliu Liu<br>
+            <i>arxiv</i><br>
+            <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
+            <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
+            <a href="https://arxiv.org/pdf/2202.05140">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <!-- <a href="https://colab.research.google.com/drive/1YcRN_kklw3cVVJNvgK_IEV6nDce9EJWK?usp=sharing">Code</a> -->
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
+        </div>
+      </div>
+
+
+      <div class="list-item publication" data-category="publication">
+        <a href="https://arxiv.org/pdf/2112.06129" class="thumbnail">
+          <img src="images/hatn_short.png" alt="" />
+
+        </a>
+        <div class="project-description">
+          <h3><a href="https://arxiv.org/pdf/2112.06129">Online Adaptation of Neural Network Models by Modified Extended
+              Kalman Filter for Customizable and Transferable Driving Behavior Prediction</a></h3>
+          <p>
+            <span style="color: black; font-weight: bold;">Letian Wang</span>, Yeping Hu, Changliu Liu<br>
+            <i>AAAI Conference on Artificial Intelligence, Workshop on Human-Centric Self-Supervised Learning</i><br>
+            <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
+            <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
+            <a href="https://arxiv.org/pdf/2112.06129">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <!-- <a href="https://colab.research.google.com/drive/1YcRN_kklw3cVVJNvgK_IEV6nDce9EJWK?usp=sharing">Code</a> -->
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
+        </div>
+      </div>
+
+      <div class="list-item publication" data-category="publication">
+        <a href="https://arxiv.org/pdf/2111.00788" class="thumbnail">
+          <video playsinline="" muted="" autoplay="" loop="" width="180px">
+            <source src="images/hatn.mp4" type="video/mp4">
+          </video>
+        </a>
+        <div class="project-description">
+          <h3><a href="https://arxiv.org/pdf/2111.00788">Hierarchical Adaptable and Transferable Networks (HATN) for
+              Driving Behavior Prediction</a></h3>
+          <p>
+            <span style="color: black; font-weight: bold;">Letian Wang</span>, Yeping Hu, Liting Sun, Wei Zhan,
+            Masayoshi Tomizuka, Changliu Liu<br>
+            <i>Conference on Neural Information Processing Systems (NeurIPS 2021), Workshop on Machine Learning for
+              Autonomous Driving (<span style="color: red;">Spotlight</span>)</i><br>
+            <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
+            <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
+            <a href="https://arxiv.org/pdf/2111.00788">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <!-- <a href="https://colab.research.google.com/drive/1YcRN_kklw3cVVJNvgK_IEV6nDce9EJWK?usp=sharing">Code</a> -->
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
+        </div>
+      </div>
+
+      <div class="list-item publication" data-category="publication">
+        <a href="https://arxiv.org/pdf/2010.14712" class="thumbnail">
+          <video playsinline="" muted="" autoplay="" loop="" width="180px">
+            <source src="images/social.mp4" type="video/mp4">
+          </video>
+        </a>
+        <div class="project-description">
+          <h3><a href="https://arxiv.org/pdf/2010.14712">Socially-Compatible Behavior Design of Autonomous Vehicles with
+              Verification on Real Human Data</a></h3>
+          <p>
+            <span style="color: black; font-weight: bold;">Letian Wang</span>, Liting Sun, Masayoshi Tomizuka, Wei
+            Zhan<br>
+            <i>IEEE Robotics and Automation Letters 2021 <span style="color: red;">Best Paper Award - Honorable
+                Mention</span></i><br>
+            <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
+            <a href="https://arxiv.org/pdf/2010.14712">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+            <!-- <a href="https://colab.research.google.com/drive/1YcRN_kklw3cVVJNvgK_IEV6nDce9EJWK?usp=sharing">Code</a> -->
+            <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
+          </p>
+        </div>
+      </div>
+
+
+      <!-- Talks -->
+      <div class="list-item talk description" data-category="talk">
+          Some of my slides can be found <a href="https://drive.google.com/file/d/1mSXashUJul4E6RqUHgO8F0SG7iFXtPo3/view">here</a>
         </div>
 
-        <div class="list-item publication" data-category="publication">
-          <a href="https://arxiv.org/pdf/2202.05140" class="thumbnail">
-            <img src="images/hatn.png" alt="" />
-          </a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/pdf/2202.05140">Transferable and Adaptable Driving Behavior Prediction</a></h3>
-            <p>
-              <span style="color: black; font-weight: bold;">Letian Wang</span>, Yeping Hu, Liting Sun, Wei Zhan, Masayoshi Tomizuka, Changliu Liu<br>
-              <i>arxiv</i><br>
-                <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
-                <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
-                <a href="https://arxiv.org/pdf/2202.05140">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <!-- <a href="https://colab.research.google.com/drive/1YcRN_kklw3cVVJNvgK_IEV6nDce9EJWK?usp=sharing">Code</a> -->
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
-            </p>
-          </div>
+        <div class="list-item talk" data-category="talk">
+          <p class="date">2024</p>Toronto TechTalk
+        </div>
+        <div class="list-item talk" data-category="talk">
+          <p class="date"></p>ZDX <a href="https://course.zhidx.com/c/MmI0ZWMzMjFjZjM3NDRjYzEwYzM=">Public Course</a>
         </div>
 
-
-        <div class="list-item publication" data-category="publication">
-          <a href="https://arxiv.org/pdf/2112.06129" class="thumbnail">
-            <img src="images/hatn_short.png" alt="" />
-
-          </a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/pdf/2112.06129">Online Adaptation of Neural Network Models by Modified Extended Kalman Filter for Customizable and Transferable Driving Behavior Prediction</a></h3>
-            <p>
-              <span style="color: black; font-weight: bold;">Letian Wang</span>, Yeping Hu, Changliu Liu<br>
-              <i>AAAI Conference on Artificial Intelligence, Workshop on Human-Centric Self-Supervised Learning</i><br>
-                <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
-                <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
-                <a href="https://arxiv.org/pdf/2112.06129">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <!-- <a href="https://colab.research.google.com/drive/1YcRN_kklw3cVVJNvgK_IEV6nDce9EJWK?usp=sharing">Code</a> -->
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
-            </p>
-          </div>
+        <div class="list-item talk" data-category="talk">
+          <p class="date">2023</p>IV Workshop on <a href="https://sites.google.com/view/iv2023-social">Social Behavior for Autonomous Vehicle</a>
         </div>
 
-        <div class="list-item publication" data-category="publication">
-          <a href="https://arxiv.org/pdf/2111.00788" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/hatn.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/pdf/2111.00788">Hierarchical Adaptable and Transferable Networks (HATN) for Driving Behavior Prediction</a></h3>
-            <p>
-              <span style="color: black; font-weight: bold;">Letian Wang</span>, Yeping Hu, Liting Sun, Wei Zhan, Masayoshi Tomizuka, Changliu Liu<br>
-              <i>Conference on Neural Information Processing Systems (NeurIPS 2021), Workshop on Machine Learning for Autonomous Driving</i><br>
-                <!-- <i>Conference on Robot Learning (CoRL) 2023</i><br> -->
-                <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
-                <a href="https://arxiv.org/pdf/2111.00788">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <!-- <a href="https://colab.research.google.com/drive/1YcRN_kklw3cVVJNvgK_IEV6nDce9EJWK?usp=sharing">Code</a> -->
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
-            </p>
-          </div>
+        <div class="list-item talk" data-category="talk">
+          <p class="date">2021</p>NeurIPS Workshop on <a href="https://ml4ad.github.io/2021/">Machine Learning for Autonomous Driving</a>
         </div>
 
-        <div class="list-item publication" data-category="publication">
-          <a href="https://arxiv.org/pdf/2010.14712" class="thumbnail">
-            <video playsinline="" muted="" autoplay="" loop="" width="180px">
-              <source src="images/social.mp4" type="video/mp4">
-            </video>
-          </a>
-          <div class="project-description">
-            <h3><a href="https://arxiv.org/pdf/2010.14712">Socially-Compatible Behavior Design of Autonomous Vehicles with Verification on Real Human Data</a></h3>
-            <p>
-              <span style="color: black; font-weight: bold;">Letian Wang</span>, Liting Sun, Masayoshi Tomizuka, Wei Zhan<br>
-                <i>IEEE Robotics and Automation Letters 2021 <span style="color: red;">Best Paper Award - Honorable Mention</span></i><br>
-                <!-- <a href="https://robot-teaching.github.io/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp; -->
-                <a href="https://arxiv.org/pdf/2010.14712">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <!-- <a href="https://colab.research.google.com/drive/1YcRN_kklw3cVVJNvgK_IEV6nDce9EJWK?usp=sharing">Code</a> -->
-                <br> <!-- TODO: extra spaces until I figure out the margin bug. -->
-            </p>
-          </div>
+        <div class="list-item talk" data-category="talk">
+          <p class="date">2020</p>INFORMS <a href="https://meetings.informs.org/wordpress/annual2020/">Annual Meeting</a>
         </div>
-
-
-        <!-- Talks -->
-        <!-- <div class="list-item talk description" data-category="talk">
-          Some of my slides can be found <a href="https://slides.com/andyzeng">here</a>
-        </div> -->
 
         <!-- <div class="list-item talk" data-category="talk">
-          <p class="date">2024</p>UIUC <a href="https://publish.illinois.edu/csl-student-conference-2024">CSL Student Conference</a>
-        </div>
-
-        <div class="list-item talk" data-category="talk">
-          <p class="date">2023</p>EMNLP Workshop on <a href="https://splu-robonlp-2023.github.io/">RoboNLP</a>
-        </div>
-
-        <div class="list-item talk" data-category="talk">
           <p class="date"></p>Cornell <a href="https://www.cs.cornell.edu/content/fall-2023-robotics-seminar">Robotics Seminar</a>
         </div> -->
 
 
-        <!-- Services -->
-        <div class="list-item misc" data-category="misc">
-          <p class="date">2024</p>Co-organizer, IEEE International Conference on Robotics and Automation (ICRA)
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Co-Organizer, RSS Workshop on <a href="https://sites.google.com/andrew.cmu.edu/rss-2023-articulate-robots">Articulate Robots</a>
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Demo, Robotics: Science and Systems (RSS) - <a href="https://roboticsconference.org/program/papers/024/">Large Language Models on Robots</a> (<a href="images/demo-rss-llm-robots.jpeg">memories</a>)
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Associate Editor, IEEE Robotics and Automation Letters (RA-L)
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Demo, Google I/O - <a href="https://code-as-policies.github.io/">Code as Policies</a> with <a href="https://sites.research.google/pali/">PaLI</a> and <a href="https://ai.google/discover/palm2/">PaLM 2</a> (<a href="images/google-io-code-as-policies.jpeg">memories</a>)
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Co-Organizer, AAAI Tutorial on <a href="https://transformer-tutorial.github.io/aaai2023/">Everything You Need to Know about Transformers</a>
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date">2022</p>Area Chair, Conference on Robot Learning (CoRL)
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Co-Organizer, CoRL Workshop on <a href="https://sites.google.com/view/corl2022-prl">Pre-training Robot Learning</a>
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Co-Organizer, CoRL Workshop on <a href="https://sites.google.com/view/corl-2022-inductive-bias-ws">Inductive Bias in Robot Learning</a>
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Demo, Google AI@ - <a href="https://code-as-policies.github.io/">Code as Policies</a> (<a href="images/google-ai@-code-as-policies.jpg">memories</a>)
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Session Chair, Robotics: Science and Systems (RSS)
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Sponsor, Google Research Scholar Program
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Co-Organizer, 2nd RSS Workshop on <a href="https://sites.google.com/view/rss22-srl/">Scaling Robot Learning</a>
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Co-Organizer, CVPR Tutorial on <a href="https://sites.google.com/view/cvpr2022-robot-learning/">Vision-Based Robot Learning</a>
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Session Chair, IEEE International Conference on Robotics and Automation (ICRA)
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Co-Organizer, ICRA Workshop on <a href="https://sites.google.com/view/icra22-srl">Scaling Robot Learning</a>
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date">2021</p>Area Chair, Conference on Robot Learning (CoRL)
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Sponsor, Google Research Scholar Program
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Session Chair, IEEE International Conference on Robotics and Automation (ICRA)
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Co-Organizer, RSS Workshop on <a href="https://sites.google.com/view/rss-ai-manipulationperspective/home">Advancing AI and Manipulation for Robotics</a>
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date">2020</p>Mentor, Google <a href="https://research.google/outreach/csrmp/">CS Research Mentorship Program</a>
-        </div>
-        
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Sponsor, Google Faculty Research Awards
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date">2018</p>Demo, Google TGIF - <a href="https://tossingbot.cs.princeton.edu/">TossingBot</a> (<a href="images/google-tgif-reach-tossingbot-warmup.mp4">memories</a>)
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date">2016</p>Co-Organizer, CVPR Workshop on <a href="https://3dvision.princeton.edu/event/cvpr16/3DDeepLearning/">3D Deep Learning</a>
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date">2015+</p>Reviewer, T-RO, RSS, CoRL, IJRR, RA-L, ICRA, NeurIPS, CVPR, IROS, ECCV, ICCV
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Reviewer, SIGGRAPH, PR Journal, Eurographics, TMM, TIP, CASE, TCSVT
-        </div>
-
-        <div class="list-item misc" data-category="misc">
-          <p class="date"></p>Member, IEEE
-        </div>
-
+      <!-- Services -->
+      <div class="list-item misc" data-category="misc">
+        <p class="date">2024</p>Co-organizer, the <a href="https://interactive-driving.github.io/">2nd International Workshop on Socially Interactive Autonomous Mobility (SIAM) at IV‘24</a>
       </div>
 
-      <div id="footer">Design and source code from <a href="https://andyzeng.github.io/">Andy's</a> awesome website. Thanks for open-sourcing! 
+      <div class="list-item misc" data-category="misc">
+        <p class="date">2023</p>Program Commitee, <a href="https://ml4ad.github.io/">Machine Learning for Autonomous Driving Symposium at NeurIPS'23</a>
+      </div>
+
+      <div class="list-item misc" data-category="misc">
+        <p class="date"></p>Co-organizer, the <a href="https://interactive-driving.github.io/">1st International Workshop on Socially Interactive Autonomous Mobility (SIAM) at IV‘24</a>
+      </div>
+        
+      <div class="list-item misc" data-category="misc">
+        <p class="date">2022</p>Program Commitee, <a href="https://ml4ad.github.io/">Workshop on Learning for Autonomous Driving at NeurIPS'23</a>
+      </div>
+
+
+      <div class="list-item misc" data-category="misc">
+        <p class="date">2020+</p>Reviewer, IJRR, RSS, NeurIPS, CVPR, ICRA, IROS, ML4AD, TNNLS, TVT, ITS, IV
+      </div>
+
+
+    </div>
+
+    <div id="footer">Design and source code from <a href="https://andyzeng.github.io/">Andy's</a> awesome website.
+      Thanks for open-sourcing!
     </div>
 
     <script>
@@ -812,26 +875,26 @@
           symbol: '.symbol',
           number: '.number parseInt',
           category: '[data-category]',
-          weight: function( itemElem ) {
-            var weight = $( itemElem ).find('.weight').text();
-            return parseFloat( weight.replace( /[\(\)]/g, '') );
+          weight: function (itemElem) {
+            var weight = $(itemElem).find('.weight').text();
+            return parseFloat(weight.replace(/[\(\)]/g, ''));
           }
         }
       });
 
       // Bind filter button click.
-      $('#filters').on( 'click', 'button', function() {
-        var filterValue = $( this ).attr('data-filter');
+      $('#filters').on('click', 'button', function () {
+        var filterValue = $(this).attr('data-filter');
         localStorage.setItem('filterValue', filterValue);
         $grid.isotope({ filter: filterValue });
       });
 
       // Change is-checked class on buttons.
-      $('.button-group').each( function( i, buttonGroup ) {
-        var $buttonGroup = $( buttonGroup );
-        $buttonGroup.on( 'click', 'button', function() {
+      $('.button-group').each(function (i, buttonGroup) {
+        var $buttonGroup = $(buttonGroup);
+        $buttonGroup.on('click', 'button', function () {
           $buttonGroup.find('.is-checked').removeClass('is-checked');
-          $( this ).addClass('is-checked');
+          $(this).addClass('is-checked');
         });
       });
 
@@ -888,8 +951,10 @@
     <!-- <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=70&t=n&d=3pp5wthj_B_tqIuIxSFqmJlNrIjSTCEobtZnxNdSV7M&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script> -->
 
     <div id="clustrmaps-container" style="display: none;">
-      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=70&t=n&d=3pp5wthj_B_tqIuIxSFqmJlNrIjSTCEobtZnxNdSV7M&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
+      <script type='text/javascript' id='clustrmaps'
+        src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=70&t=n&d=3pp5wthj_B_tqIuIxSFqmJlNrIjSTCEobtZnxNdSV7M&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
     </div>
-    
-  </body>
+
+</body>
+
 </html>
