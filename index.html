@@ -34,7 +34,7 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-    .timeline {
+    /* .timeline {
       position: relative;
       max-width: 1200px;
       margin: 0 auto;
@@ -50,7 +50,7 @@
       bottom: 0;
       left: 30px;
       margin-left: -3px;
-    }
+    } */
 
     .experience::after {
       content: '';
@@ -59,7 +59,7 @@
       background-color: #abadb3;
       top: 0px;
       bottom: 0;
-      left: 3px;
+      left: 72px;
       margin: 20px 0px;
       margin-left: -3px;
     }
@@ -79,12 +79,12 @@
       justify-self: left;
     }
 
-    .container::after {
+    .timeline::after {
       content: '';
       position: absolute;
       width: 5px;
       height: 5px;
-      left: -4px;
+      left: 65.5px;
       background-color: #5b5c5f;
       border: 2px solid #5b5c5f;
       border-radius: 50%;
@@ -125,7 +125,13 @@
       font-weight: bold;
       /* margin-bottom: 10px;
     } */
+    .p-exp {
+      line-height: 30px;
+    }
 
+    .container > img {
+      width: 40px;
+    }
   </style>
 </head>
 
@@ -385,9 +391,11 @@
       <!-- Experiences -->
       <div class="list-item experience" data-category="experience">
         <div class="container left">
+          <div class="date">2023.09 - 2024.06</div>
+          <div class="timeline"></div>
           <img src="images/nvidia_logo.jpg" alt="NVIDIA">
           <div class="content">
-            <div class="date">2023.09 - 2024.06</div>
+
 
             <p>Research intern at the <a href="https://research.nvidia.com/labs/avg/">Autonomous Vehicle Group of NVIDIA
                 Research</a>, with <a href="https://karkus.tilda.ws/">Peter Karkus</a>, <a
@@ -401,10 +409,11 @@
         </div>
 
         <div class="container left">
+          <div class="date">2021.05 - 2023.02</div>
+          <div class="timeline"></div>
           <img src="images/sensetime_logo.png" alt="SenseTime Research">
-
           <div class="content">
-            <div class="date">2021.05 - 2023.02</div>
+
             <p> Research intern at <a href="https://www.sensetime.com/en/">X-Lab of SenseTime Research</a>, with <a
                 href="https://liuyu.us/">Yu Liu</a>. I worked on safe end-to-end driving, efficient reinforcement
               learning for autonomous driving
@@ -417,13 +426,14 @@
         </div>
 
         <div class="container left">
+          <div class="date">2020.10 - 2021.05</div>
+          <div class="timeline"></div>
           <img src="images/cmu_logo.png" alt="Carnegie Mellon University">
 
           <div class="content">
-            <div class="date">2020.10 - 2021.05</div>
             <p>Research assistant at the <a href="http://icontrol.ri.cmu.edu/">ICL Lab</a>, with <a
-                href="https://www.cs.cmu.edu/~cliu6/">Changliu Liu</a> and <a
-                href="https://yeping-hu.github.io/">Yeping Hu</a>. I worked on generalizable motion prediction algorithms in
+                href="https://www.cs.cmu.edu/~cliu6/">Changliu Liu</a> and <a href="https://yeping-hu.github.io/">Yeping
+                Hu</a>. I worked on generalizable motion prediction algorithms in
               different scenarios, and social interaction for autonomous driving.
               [<a href="https://arxiv.org/pdf/2111.00788">NeurIPS'21</a>,
               <a href="https://www.nowpublishers.com/article/Details/ROB-078">book</a>]
@@ -432,11 +442,12 @@
         </div>
 
         <div class="container left">
+          <div class="date">2019.10 - 2020.10</div>
+          <div class="timeline"></div>
           <img src="images/berkeley_logo.png" alt="UC Berkeley">
 
           <div class="content">
-            <div class="date">2019.10 - 2020.10</div>
-            <p>Research assistant at the <a href="https://msc.berkeley.edu/">MSC Lab</a>, with <a
+            <p class="p-exp">Research assistant at the <a href="https://msc.berkeley.edu/">MSC Lab</a>, with <a
                 href="https://scholar.google.com/citations?user=BitIg-YAAAAJ&hl=en">Liting Sun</a>, <a
                 href="https://zhanwei.site/">Wei Zhan</a>, and <a
                 href="https://scholar.google.com/citations?user=8m8taGEAAAAJ&hl=en">Masayoshi Tomizuka</a>. I worked on
@@ -446,10 +457,11 @@
         </div>
 
         <div class="container left">
+          <div class="date">2018.07 - 2018.09</div>
+          <div class="timeline"></div>
           <img src="images/hkust_logo.jpg" alt="Hong Kong University of Science and Technology">
 
           <div class="content">
-            <div class="date">2018.07 - 2018.09</div>
             <p>Research assistant at the <a href="https://ri.hkust.edu.hk/">HKUST RI</a>, with <a
                 href="https://www.mech.hku.hk/academic-staff/zhang-f">Fu Zhang</a>. I worked on unified control strategy
               for vertically take-off and landing UAVs.</p>
@@ -806,48 +818,55 @@
 
       <!-- Talks -->
       <div class="list-item talk description" data-category="talk">
-          Some of my slides can be found <a href="https://drive.google.com/file/d/1mSXashUJul4E6RqUHgO8F0SG7iFXtPo3/view">here</a>
-        </div>
+        Some of my slides can be found <a
+          href="https://drive.google.com/file/d/1mSXashUJul4E6RqUHgO8F0SG7iFXtPo3/view">here</a>
+      </div>
 
-        <div class="list-item talk" data-category="talk">
-          <p class="date">2024</p>Toronto TechTalk
-        </div>
-        <div class="list-item talk" data-category="talk">
-          <p class="date"></p>ZDX <a href="https://course.zhidx.com/c/MmI0ZWMzMjFjZjM3NDRjYzEwYzM=">Public Course</a>
-        </div>
+      <div class="list-item talk" data-category="talk">
+        <p class="date">2024</p>Toronto TechTalk
+      </div>
+      <div class="list-item talk" data-category="talk">
+        <p class="date"></p>ZDX <a href="https://course.zhidx.com/c/MmI0ZWMzMjFjZjM3NDRjYzEwYzM=">Public Course</a>
+      </div>
 
-        <div class="list-item talk" data-category="talk">
-          <p class="date">2023</p>IV Workshop on <a href="https://sites.google.com/view/iv2023-social">Social Behavior for Autonomous Vehicle</a>
-        </div>
+      <div class="list-item talk" data-category="talk">
+        <p class="date">2023</p>IV Workshop on <a href="https://sites.google.com/view/iv2023-social">Social Behavior for
+          Autonomous Vehicle</a>
+      </div>
 
-        <div class="list-item talk" data-category="talk">
-          <p class="date">2021</p>NeurIPS Workshop on <a href="https://ml4ad.github.io/2021/">Machine Learning for Autonomous Driving</a>
-        </div>
+      <div class="list-item talk" data-category="talk">
+        <p class="date">2021</p>NeurIPS Workshop on <a href="https://ml4ad.github.io/2021/">Machine Learning for
+          Autonomous Driving</a>
+      </div>
 
-        <div class="list-item talk" data-category="talk">
-          <p class="date">2020</p>INFORMS <a href="https://meetings.informs.org/wordpress/annual2020/">Annual Meeting</a>
-        </div>
+      <div class="list-item talk" data-category="talk">
+        <p class="date">2020</p>INFORMS <a href="https://meetings.informs.org/wordpress/annual2020/">Annual Meeting</a>
+      </div>
 
-        <!-- <div class="list-item talk" data-category="talk">
+      <!-- <div class="list-item talk" data-category="talk">
           <p class="date"></p>Cornell <a href="https://www.cs.cornell.edu/content/fall-2023-robotics-seminar">Robotics Seminar</a>
         </div> -->
 
 
       <!-- Services -->
       <div class="list-item misc" data-category="misc">
-        <p class="date">2024</p>Co-organizer, the <a href="https://interactive-driving.github.io/">2nd International Workshop on Socially Interactive Autonomous Mobility (SIAM) at IV‘24</a>
+        <p class="date">2024</p>Co-organizer, the <a href="https://interactive-driving.github.io/">2nd International
+          Workshop on Socially Interactive Autonomous Mobility (SIAM) at IV‘24</a>
       </div>
 
       <div class="list-item misc" data-category="misc">
-        <p class="date">2023</p>Program Commitee, <a href="https://ml4ad.github.io/">Machine Learning for Autonomous Driving Symposium at NeurIPS'23</a>
+        <p class="date">2023</p>Program Commitee, <a href="https://ml4ad.github.io/">Machine Learning for Autonomous
+          Driving Symposium at NeurIPS'23</a>
       </div>
 
       <div class="list-item misc" data-category="misc">
-        <p class="date"></p>Co-organizer, the <a href="https://interactive-driving.github.io/">1st International Workshop on Socially Interactive Autonomous Mobility (SIAM) at IV‘24</a>
+        <p class="date"></p>Co-organizer, the <a href="https://interactive-driving.github.io/">1st International
+          Workshop on Socially Interactive Autonomous Mobility (SIAM) at IV‘24</a>
       </div>
-        
+
       <div class="list-item misc" data-category="misc">
-        <p class="date">2022</p>Program Commitee, <a href="https://ml4ad.github.io/">Workshop on Learning for Autonomous Driving at NeurIPS'23</a>
+        <p class="date">2022</p>Program Commitee, <a href="https://ml4ad.github.io/">Workshop on Learning for Autonomous
+          Driving at NeurIPS'23</a>
       </div>
 
 
