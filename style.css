@@ -313,3 +313,8 @@ h3 a:hover {
   bottom: 0;
   line-height: 2.5em;
 }
+
+.container > .date {
+  width: 55px;
+  text-align: center;
+}
