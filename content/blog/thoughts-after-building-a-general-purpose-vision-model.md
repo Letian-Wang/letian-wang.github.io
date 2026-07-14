@@ -51,7 +51,7 @@ For this reason, we turned to purely synthetic data. Besides its scalability, sy
 
 Even more surprisingly, although our post-training data only contained human objects, the resulting model generalized gracefully to a wide variety of unseen object categories. My coauthors and I often found ourselves amazed by this behavior. It genuinely felt like the model had learned the underlying concepts we intended to teach, rather than simply memorizing mappings from inputs to outputs. At times, it even seemed that the model itself was "smarter" than the data we provided. Ironically, the data we fed it still largely followed the conventions of traditional perception datasets, and perhaps those fixed formats were limiting what the model was ultimately capable of learning. I suspect there is far more potential waiting to be unlocked.
 
-Looking at it from another perspective, once a problem becomes primarily a data problem, it sometimes means that the problem itself has become reasonably well formulated—which is something worth celebrating. At the same time, it naturally makes me wonder where the next breakthroughs will come from.
+Looking at it from another perspective, once a problem becomes primarily a data problem, it often means the problem itself has become reasonably well formulated—which is something worth celebrating. As we continue pushing the frontier of data-model codesign, it also naturally makes me wonder where the next breakthroughs will come from.
 
 ## Where We Are, and How Far We Have to Go
 
