@@ -94,7 +94,7 @@ To me, the essence of deep learning ultimately comes back to representation lear
 
 ## Unified Multitask Post-Training
 
-Once such a pretrained model exists, the next challenge is unified multitask post-training. Many excellent works have already demonstrated that image and video generation models can serve as strong backbones for downstream perception tasks, and I have great respect for these pioneering efforts. What we tried to build instead was a single architecture: one backbone, one prediction head, and one loss. Switching tasks should not require changing the model architecture or training strategy—only changing the text prompt.
+Once such a pretrained model exists, the next challenge is unified multitask post-training. Many excellent works have already demonstrated that image and video generation models can serve as strong backbones for downstream perception tasks, and I have great respect for these pioneering efforts. What we tried to build instead was a single architecture: one backbone, one prediction head, and one loss. Switching tasks should not require changing the model architecture or training strategy—only changing the data, and the text prompt.
 
 Certainly, carefully designed decoders and task-specific objectives can improve performance on individual benchmarks. However, I do not believe such designs follow the first principles of scaling. If every new task requires another customized decoder or architectural modification, the system can never truly become general-purpose. Architectures that scale tend to be simple, unified, and reusable. As Einstein famously put it: "Everything should be made as simple as possible, but not simpler."
 
