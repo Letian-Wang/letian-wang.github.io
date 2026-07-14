@@ -230,15 +230,20 @@ h2 {
   grid-row: 1 / 3; /* Place in the first row */
   width: 100%; /* Make it take the full width of its grid cell */
 }
-.preview3 {
-  grid-column: 4; /* Place this item in the second column */
-  grid-row: 1; /* Place in the second row */
-  width: 100%; /* Make it take the full width of its grid cell */
+.preview-pair {
+    grid-column: 4; /* Place this item in the fourth column */
+    grid-row: 1 / 3; /* Span across both rows, like the other previews */
+    display: flex; /* Put the two videos side by side, sharing one row */
+    gap: 10px;
+    height: 100%;
 }
-.preview4 {
-  grid-column: 4; /* Place this item in the third column */
-  grid-row: 2; /* Place in the first row */
-  width: 100%; /* Make it take the full width of its grid cell */
+
+.preview-pair a {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /**************************************************/
