@@ -14,7 +14,9 @@ This blog summarizes some of my personal thoughts after building GenCeption, a g
 One-sentence summary: We treat video generation as the large-scale pretraining paradigm for vision, analogous to next-token prediction in language. Starting from this pretrained model, we post-train it into a general-purpose perception model that can solve many vision tasks with a single forward pass—without iterative diffusion, trained purely on synthetic data, achieving state-of-the-art performance, strong data efficiency, and several surprising emergent behaviors.
 
 🌐 Project Page: [genception.github.io](https://genception.github.io)
+
 📄 Paper: [arXiv:2607.09024](https://arxiv.org/abs/2607.09024)
+
 🐦 X (Twitter) Thread: [link](https://x.com/Letian_Wang_6/status/2076646900745277622)
 
 ---
