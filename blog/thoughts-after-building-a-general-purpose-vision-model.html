@@ -50,9 +50,9 @@
 <span class="post-meta-sep">&middot;</span>
 <span class="post-meta-date">July 14, 2026</span>
 <span class="post-meta-sep">&middot;</span>
-<span class="post-meta-reading">6 min read</span>
+<span class="post-meta-reading">13 min read</span>
 </div>
-<div class="post-meta-tags"><span class="tag">research</span> <span class="tag">computer vision</span> <span class="tag">representation learning</span></div>
+<div class="post-meta-tags"><span class="tag">research</span> <span class="tag">multimodal learning</span> <span class="tag">first principal</span></div>
 </header>
 <div class="post-layout">
 <nav class="post-toc" id="post-toc">
@@ -72,6 +72,70 @@
 </nav>
 </main>
 <script type="text/markdown" id="raw-markdown">
+This blog summarizes some of my personal thoughts after building GenCeption, a general-purpose vision model developed at Google DeepMind.
+
+**If you somehow ended up on this page, but don’t know what GenCeption is:**
+
+One-sentence summary: We treat video generation as the large-scale pretraining paradigm for vision, analogous to next-token prediction in language. Starting from this pretrained model, we post-train it into a general-purpose perception model that can solve many vision tasks with a single forward pass—without iterative diffusion, trained purely on synthetic data, achieving state-of-the-art performance, strong data efficiency, and several surprising emergent behaviors.
+
+🌐 Project Page: [genception.github.io](https://genception.github.io)
+📄 Paper: [arXiv:2607.09024](https://arxiv.org/abs/2607.09024)
+🐦 X (Twitter) Thread: [link](https://x.com/Letian_Wang_6/status/2076646900745277622)
+
+---
+
+Of course, every field has its own "GPT moment" narrative these days. Slogans come and go, and every week seems to bring a new one. Rather than adding another slogan, I would like to share a few of my own, still immature, thoughts.
+
+## Representation Learning at Scale
+
+To me, the essence of deep learning ultimately comes back to representation learning at scale. Video generative pretraining is perhaps the first paradigm that simultaneously satisfies three key properties: learning a 4D world model, naturally aligning vision and language, and scaling effectively with both data and compute. Existing visual pretraining paradigms—such as MAE, DINO, JEPA, and contrastive learning—each capture important pieces of this picture, but none satisfy all three at once. I believe that future generations of native multimodal architectures will eventually emerge, but for now, video generative pretraining is the closest paradigm we have to this ideal.
+
+## Unified Multitask Post-Training
+
+Once such a pretrained model exists, the next challenge is unified multitask post-training. Many excellent works have already demonstrated that image and video generation models can serve as strong backbones for downstream perception tasks, and I have great respect for these pioneering efforts. What we tried to build instead was a single architecture: one backbone, one prediction head, and one loss. Switching tasks should not require changing the model architecture or training strategy—only changing the text prompt.
+
+Certainly, carefully designed decoders and task-specific objectives can improve performance on individual benchmarks. However, I do not believe such designs follow the first principles of scaling. If every new task requires another customized decoder or architectural modification, the system can never truly become general-purpose. Architectures that scale tend to be simple, unified, and reusable. As Einstein famously put it: "Everything should be made as simple as possible, but not simpler."
+
+In this sense, our philosophy is remarkably similar to GPT-1. Task specification should live in the data rather than in the architecture. Simplicity and scalability are not constraints—they are design principles. Admittedly, achieving a unified data format in vision is considerably harder than in language. Nevertheless, our success on tasks such as depth estimation and ray maps convinced me that this direction has tremendous potential. Interestingly, the ray-map representation we eventually adopted looked rather unconventional. I believed it would work, but I also knew there was a fair amount of intuition—and perhaps a little luck—involved. When it finally succeeded, it reminded me once again how powerful first-principles thinking can be.
+
+## The Feed-Forward Design
+
+Another aspect that I find particularly interesting is the feed-forward design. Our work focuses primarily on perception tasks, which are often close to deterministic and typically require low latency. Multi-step diffusion, while powerful, is inherently slow and remains far from real-time deployment. During post-training, we therefore transformed the pretrained model into a single-forward-pass predictor, dramatically improving inference efficiency. Even our 1.3B model runs at around 13 FPS without any dedicated optimization.
+
+This design inevitably introduces a gap between pretraining and supervised fine-tuning, causing the model to sacrifice some of its original capabilities. On the other hand, iterative diffusion can also introduce excessive hallucination for vision tasks that are usually deterministic. I believe there remains much to be explored here. Interestingly, toward the end of this project, I revisited the GPT-1 paper and noticed that even GPT-1 introduced small architectural modifications during supervised fine-tuning. It was fascinating to realize that, at different points in time and from different directions, researchers often find themselves stepping into the same river.
+
+## On Data
+
+Finally, I would like to talk about data.
+
+Large language models were fortunate enough to inherit the Internet—a naturally occurring playground filled with massive amounts of high-quality text. This made next-token prediction an extraordinarily successful pretraining objective. Vision, especially perception, does not enjoy the same luxury. Large-scale visual data on the Internet primarily consists of videos, which are excellent for next-frame prediction but provide little direct supervision for perception.
+
+For this reason, we turned to purely synthetic data. Besides its scalability, synthetic data offers another major advantage: perfectly accurate ground truth. In retrospect, this became one of the foundations of our success. After extensive experimentation, we found that models trained entirely on synthetic data transferred remarkably well to real-world images.
+
+Even more surprisingly, although our post-training data only contained human objects, the resulting model generalized gracefully to a wide variety of unseen object categories. My coauthors and I often found ourselves amazed by this behavior. It genuinely felt like the model had learned the underlying concepts we intended to teach, rather than simply memorizing mappings from inputs to outputs. At times, it even seemed that the model itself was "smarter" than the data we provided. Ironically, the data we fed it still largely followed the conventions of traditional perception datasets, and perhaps those fixed formats were limiting what the model was ultimately capable of learning. I suspect there is far more potential waiting to be unlocked.
+
+Looking at it from another perspective, once a problem becomes primarily a data problem, it sometimes means that the problem itself has become reasonably well formulated—which is something worth celebrating. At the same time, it naturally makes me wonder where the next breakthroughs will come from.
+
+## Where We Are, and How Far We Have to Go
+
+Looking back at the history of large language models, people often talk about the "GPT moment." But GPT-1, GPT-2, GPT-3, and GPT-4 were each separated by profound conceptual and engineering breakthroughs. In many discussions with Kaiming, I came away with the feeling that perhaps we have now reached something like a GPT-1—or perhaps GPT-1.5—moment for visual foundation models. But there is still a very long road ahead. Going from GPT-1 to GPT-4 required years of continuous innovation, and I believe vision will likely require a similarly long journey. The more I think about it, the more convinced I become that the problems worth dedicating years to are usually the simplest—and the hardest. Perhaps great research always comes back to first principles.
+
+Deeply understanding the differences between modalities, how scaling behaves across modalities, and the dynamics of interactions between them may ultimately be among the most fundamental questions in multimodal intelligence.
+
+## Closing Thoughts
+
+I still have many more ideas swirling around in my head, but I'll stop here for today, as I have a basketball session to catch.
+
+Looking back, I feel incredibly fortunate to have spent this period at DeepMind working on such a fascinating project. More importantly, I learned tremendously from my collaborators and made many lifelong friends along the way. Long conversations with my Swiss coauthors deepened my understanding of diffusion models. Chuhan taught me the "secret techniques" behind D4RT. From AZ and João, I learned the composure, perspective, and judgment that come with years of experience. And before my internship began, I could never have imagined spending half a year in weekly one-on-one meetings with Kaiming He. Those conversations fundamentally reshaped my research vision, refined my taste, and raised my aspirations to an entirely new level.
+---
+title: Thoughts after building a general-purpose vision model
+date: 2026-07-14
+summary: Reflections on representation learning at scale, unified architectures, and synthetic data, after a project building a general-purpose vision model at DeepMind.
+tags: [research, computer vision, representation learning]
+featured: true
+author: Letian Wang
+---
+
 This blog summarizes some of my thoughts after building GenCeption, a general-purpose vision model developed at Google DeepMind.
 
 **If you somehow ended up on this page, but don’t know what GenCeption is:**

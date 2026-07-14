@@ -6,11 +6,11 @@
     "summary": "Reflections on representation learning at scale, unified architectures, and synthetic data, after a project building a general-purpose vision model at DeepMind.",
     "tags": [
       "research",
-      "computer vision",
-      "representation learning"
+      "multimodal learning",
+      "first principal"
     ],
     "featured": true,
-    "readingTime": 6,
+    "readingTime": 13,
     "author": "Letian Wang"
   }
 ]
