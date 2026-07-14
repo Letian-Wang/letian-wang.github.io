@@ -1,0 +1,108 @@
+/* ==========================================================================
+   theme.css - shared design tokens, nav bar, and dark mode for the whole site
+   Used by: index.html, blog.html, and every generated blog/<slug>.html page
+   ========================================================================== */
+
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f6f6f8;
+  --text: #150c21;
+  --muted: #8a8f98;
+  --link: #146ebe;
+  --link-hover: #0d5aa0;
+  --border: #e6e6ea;
+  --code-bg: #f4f4f6;
+  --shadow: rgba(20, 12, 33, 0.06);
+  --tag-bg: #f0f1f4;
+  --tag-text: #52586a;
+}
+
+html.dark {
+  --bg: #15161b;
+  --bg-alt: #1c1d24;
+  --text: #e7e5ef;
+  --muted: #8f93a1;
+  --link: #6fb3f4;
+  --link-hover: #9ccdf7;
+  --border: #2c2d36;
+  --code-bg: #1e1f27;
+  --shadow: rgba(0, 0, 0, 0.35);
+  --tag-bg: #23242c;
+  --tag-text: #b7bac4;
+}
+
+html { background: var(--bg); }
+body { background: var(--bg); color: var(--text); }
+
+body, .site-nav, .card, a {
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.site-nav {
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.site-nav-inner {
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 0.9em 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Asap', roboto, sans-serif;
+}
+
+.site-brand { color: var(--text) !important; font-weight: 600; font-size: 1.05em; border: none !important; }
+.site-brand:hover { color: var(--link) !important; }
+
+.site-nav-links { display: flex; align-items: center; gap: 1.6em; }
+
+.nav-link { color: var(--muted); font-size: 0.95em; font-weight: 500; border: none !important; }
+.nav-link:hover, .nav-link.active { color: var(--text) !important; }
+
+.nav-right { display: flex; align-items: center; gap: 1em; }
+
+.theme-toggle {
+  border: 1px solid var(--border);
+  background: var(--bg-alt);
+  color: var(--text);
+  border-radius: 6px;
+  width: 2.1em;
+  height: 2.1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.95em;
+  line-height: 1;
+}
+
+.theme-toggle:hover { border-color: var(--muted); }
+
+html.dark .theme-icon-sun { display: none; }
+html:not(.dark) .theme-icon-moon { display: none; }
+
+.tag {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 500;
+  color: var(--tag-text);
+  background: var(--tag-bg);
+  border-radius: 4px;
+  padding: 0.2em 0.6em;
+  margin: 0 0.4em 0.4em 0;
+  border: none !important;
+}
+
+.tag:hover { color: var(--link) !important; }
+.tag.is-active { color: #fff !important; background: var(--link); }
+
+@media (max-width: 700px) {
+  .site-nav-inner { padding: 0.8em 1.2em; }
+  .site-nav-links { gap: 1em; }
+}
