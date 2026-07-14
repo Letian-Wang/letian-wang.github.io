@@ -5,7 +5,13 @@
 <link>https://letian-wang.github.io/blog.html</link>
 <description>Research notes and essays by Letian Wang</description>
 <language>en-us</language>
-<lastBuildDate>Tue, 14 Jul 2026 14:32:34 GMT</lastBuildDate>
-
+<lastBuildDate>Tue, 14 Jul 2026 14:35:49 GMT</lastBuildDate>
+<item>
+<title>Thoughts after building a general-purpose vision model</title>
+<link>https://letian-wang.github.io/blog/thoughts-after-building-a-general-purpose-vision-model.html</link>
+<guid>https://letian-wang.github.io/blog/thoughts-after-building-a-general-purpose-vision-model.html</guid>
+<pubDate>Tue, 14 Jul 2026 00:00:00 GMT</pubDate>
+<description>Reflections on representation learning at scale, unified architectures, and synthetic data, after a project building a general-purpose vision model at DeepMind.</description>
+</item>
 </channel>
 </rss>
