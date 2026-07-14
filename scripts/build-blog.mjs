@@ -9,6 +9,7 @@ const CONTENT_DIR = path.join(ROOT, 'content', 'blog');
 const BLOG_OUT_DIR = path.join(ROOT, 'blog');
 const SITE_URL = 'https://letian-wang.github.io';
 const SITE_TITLE = 'Letian Wang';
+const BS = String.fromCharCode(92);
 
 function stripQuotes(s) {
   if ((s.charAt(0) === '"' && s.charAt(s.length - 1) === '"') || (s.charAt(0) === "'" && s.charAt(s.length - 1) === "'")) {
