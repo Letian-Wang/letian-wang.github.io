@@ -137,21 +137,27 @@
       width: 55px;
     }
   </style>
-<link rel="stylesheet" href="theme.css">
-  <script src="nav.js" defer></script>
+<link rel="stylesheet" href="assets/css/theme.css">
+  <script src="assets/js/nav.js"></script>
   <!-- Cloudflare Web Analytics -->
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "661e91306fb84e61ab569ce1f18327c1"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
 
 <body id="body" data-page="home">
   <header class="site-nav">
-    <nav class="site-nav-inner">
-      <a href="index.html" class="site-nav-brand">Letian Wang</a>
-      <div class="site-nav-links">
-        <a href="index.html">Home</a>
-        <a href="blog/index.html">Blog</a>
+    <div class="site-nav-inner">
+      <a class="site-brand" href="index.html">Letian Wang</a>
+      <nav class="site-nav-links">
+        <a class="nav-link" data-nav="home" href="index.html">Home</a>
+        <a class="nav-link" data-nav="blog" href="blog.html">Blog</a>
+      </nav>
+      <div class="nav-right">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+          <span class="theme-icon-sun">&#9728;</span>
+          <span class="theme-icon-moon">&#9789;</span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
   <div id="main">
