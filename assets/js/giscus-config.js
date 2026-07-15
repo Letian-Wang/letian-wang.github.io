@@ -11,6 +11,6 @@
 //      category (e.g. "General" or "Announcements"), and copy the data-repo-id
 //      and data-category-id values it generates into this file.
 window.GISCUS_REPO = 'Letian-Wang/letian-wang.github.io';
-window.GISCUS_REPO_ID = '';
+window.GISCUS_REPO_ID = 'R_kgDOMJ72EQ';
 window.GISCUS_CATEGORY = 'General';
-window.GISCUS_CATEGORY_ID = '';
+window.GISCUS_CATEGORY_ID = 'DIC_kwDOMJ72Ec4DBN4C';
