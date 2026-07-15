@@ -164,6 +164,71 @@
     nav.innerHTML = prevHtml + nextHtml;
   }
 
+  // ---- 7. Like button (increment-only, persisted via a public counter API) --
+  function initLikeButton(meta) {
+      var btn = document.getElementById('like-btn');
+      if (!btn) return;
+      var countEl = document.getElementById('like-count');
+      var iconEl = btn.querySelector('.like-icon');
+      var slug = (meta && meta.slug) || (window.location.pathname.split('/').pop() || 'post').replace(/\.html$/, '');
+      var namespace = 'letian-wang-github-io';
+      var key = 'blog-like-' + slug;
+      var storageKey = 'liked-' + slug;
+      var liked = false;
+      try { liked = window.localStorage.getItem(storageKey) === '1'; } catch (e) {}
+
+      function render() {
+            btn.classList.toggle('is-liked', liked);
+            btn.setAttribute('aria-pressed', liked ? 'true' : 'false');
+            if (iconEl) iconEl.innerHTML = liked ? '&#9829;' : '&#9825;';
+      }
+      render();
+
+      function setCount(n) {
+            if (countEl && typeof n === 'number' && !isNaN(n)) countEl.textContent = n;
+      }
+
+      fetch('https://abacus.jasoncameron.dev/get/' + namespace + '/' + key)
+        .then(function (r) { return r.json(); })
+        .then(function (data) { setCount(data && data.value); })
+        .catch(function () {});
+
+      btn.addEventListener('click', function () {
+            if (liked) return;
+            liked = true;
+            try { window.localStorage.setItem(storageKey, '1'); } catch (e) {}
+            render();
+            fetch('https://abacus.jasoncameron.dev/hit/' + namespace + '/' + key)
+              .then(function (r) { return r.json(); })
+              .then(function (data) { setCount(data && data.value); })
+              .catch(function () {});
+      });
+  }
+
+  // ---- 8. Comments (giscus, activated once repo config is available) ---------
+  function initComments() {
+      var container = document.getElementById('giscus-comments');
+      if (!container) return;
+      if (!window.GISCUS_REPO || !window.GISCUS_REPO_ID || !window.GISCUS_CATEGORY_ID) return;
+      container.innerHTML = '';
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.setAttribute('data-repo', window.GISCUS_REPO);
+      script.setAttribute('data-repo-id', window.GISCUS_REPO_ID);
+      script.setAttribute('data-category', window.GISCUS_CATEGORY || 'General');
+      script.setAttribute('data-category-id', window.GISCUS_CATEGORY_ID);
+      script.setAttribute('data-mapping', 'pathname');
+      script.setAttribute('data-strict', '0');
+      script.setAttribute('data-reactions-enabled', '1');
+      script.setAttribute('data-emit-metadata', '0');
+      script.setAttribute('data-input-position', 'top');
+      script.setAttribute('data-theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      script.setAttribute('data-lang', 'en');
+      script.setAttribute('crossorigin', 'anonymous');
+      script.async = true;
+      container.appendChild(script);
+  }
+
   // ---- Main ------------------------------------------------------------------
   function init() {
     var mdEl = document.getElementById('raw-markdown');
@@ -210,6 +275,8 @@
     initProgressBar();
     initActions(meta);
     initPostNav(meta);
+    initLikeButton(meta);
+    initComments();
   }
 
   if (document.readyState === 'loading') {
