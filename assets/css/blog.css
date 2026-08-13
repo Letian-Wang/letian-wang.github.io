@@ -287,11 +287,9 @@
   font-size: 1em;
 }
 
-.post-content figure { margin: 0.65em 0; }
-
-/* A paragraph's own bottom margin would otherwise collapse-win over the
-   figure's smaller top margin, so tighten it when a figure follows. */
-.post-content p:has(+ figure) { margin-bottom: 0.65em; }
+/* Top margin exceeds a paragraph's 1.3em bottom margin, so it wins the
+   collapse and sets the gap on its own. */
+.post-content figure { margin: 1.4em 0 0.65em; }
 
 .post-content figure img,
 .post-content figure video {
