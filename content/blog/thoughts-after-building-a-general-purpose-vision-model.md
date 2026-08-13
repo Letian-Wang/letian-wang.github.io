@@ -1,5 +1,5 @@
 ---
-title: Thoughts after building a general-purpose vision model
+title: Thoughts after building a general-purpose vision model at DeepMind
 date: 2026-07-14
 summary: Reflections on representation learning at scale, unified architectures, and synthetic data, after a project building a general-purpose vision model at DeepMind.
 tags: [research, multimodal learning, first principal]
@@ -18,6 +18,10 @@ One-sentence summary: We treat video generation as the large-scale pretraining p
 📄 Paper: [arXiv:2607.09024](https://arxiv.org/abs/2607.09024)
 
 🐦 X (Twitter) Thread: [link](https://x.com/Letian_Wang_6/status/2076646900745277622)
+
+<figure>
+<img src="../assets/images/llm-history-comparison.png" alt="Table comparing GPT-1/T5, GPT-2, and GenCeption across four properties: generative pretraining with discriminative SFT, a unified architecture, one model weight for all tasks, and zero-shot learning from scaled pretraining. It asks whether this is vision's GPT-1 or GPT-1.5 moment." style="max-width:100%;height:auto;">
+</figure>
 
 ---
 
@@ -41,6 +45,10 @@ Another aspect that I find particularly interesting is the feed-forward design. 
 
 This design inevitably introduces a gap between pretraining and supervised fine-tuning, causing the model to sacrifice some of its original capabilities. On the other hand, iterative diffusion can also introduce excessive hallucination for vision tasks that are usually deterministic. I believe there remains much to be explored here. Interestingly, toward the end of this project, I revisited the GPT-1 paper and noticed that GPT-1 also introduced small architectural modifications during supervised fine-tuning. Besides, after finally building an any-task generalist model with performance comparable to specialized state-of-the-art systems, I realized GPT-1 shared a common architecture across tasks, but it still did not use exactly the same model weights for every task. It was fascinating to realize that, at different points in time and from different directions, researchers often find themselves stepping into the same river.
 
+<figure>
+<img src="../assets/images/paradigm-shift-computer-vision.png" alt="Before/after table contrasting the old per-task approach to computer vision with a unified generative one, both in principle (objective, what you scale, task space) and in practice (model, loss, new tasks, deployment)." style="max-width:100%;height:auto;">
+</figure>
+
 ## On Data
 
 Finally, I would like to talk about data.
@@ -57,7 +65,15 @@ Looking at it from another perspective, once a problem becomes primarily a data 
 
 Looking back at the history of large language models, people often talk about the "GPT moment." But GPT-1, GPT-2, GPT-3, and GPT-4 were each separated by profound conceptual and engineering breakthroughs. In many discussions with Kaiming, I came away with the feeling that perhaps we have now reached something like a GPT-1—or perhaps GPT-1.5—moment for visual foundation models. But there is still a very long road ahead. Going from GPT-1 to GPT-4 required years of continuous innovation, and I believe vision will likely require a similarly long journey. The more I think about it, the more convinced I become that the problems worth dedicating years to are usually the simplest—and the hardest. Great research always comes back to first principles.
 
+<figure>
+<img src="../assets/images/gpt-roadmap-language-vision.png" alt="The GPT-1 through GPT-4 lineage laid out against two columns, Language and Vision. Vision is filled in only through the GPT-2 row and is a question mark for everything after." style="max-width:100%;height:auto;">
+</figure>
+
 Deeply understanding the differences between modalities, how scaling behaves within and across modalities, and the dynamics of their interactions may ultimately be among the most fundamental questions in multimodal intelligence. The insights we gain from these questions will not be limited to language and vision—they have the potential to reshape how we think about audio, robotics, touch, and many future modalities yet to be explored.
+
+<figure>
+<img src="../assets/images/next-gen-multimodal-architecture.png" alt="Slide asking what the next-gen native multimodal architecture is, listing modality differences, scaling behaviors, and interaction dynamics, beside a Vision/Language/Action Venn diagram of publication venues." style="max-width:100%;height:auto;">
+</figure>
 
 ## Closing Thoughts
 
