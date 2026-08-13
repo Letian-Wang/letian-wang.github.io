@@ -93,10 +93,6 @@ One-sentence summary: We treat video generation as the large-scale pretraining p
 <img src="../assets/images/llm-history-comparison.png" alt="A table titled 'Look Back at History of LLM' comparing GPT-1/T5, GPT-2, and GenCeption across four properties. GPT-1/T5 has generative pretraining plus discriminative SFT and a unified text-to-text architecture, but not one model weight for all tasks and no scaled-pretrain zero-shot learning. GPT-2 has no SFT, a unified text-to-text architecture, one model weight for all tasks, and zero-shot learning. GenCeption has generative pretraining plus discriminative SFT, a unified video-to-video architecture, and one model weight for all tasks, but not yet scaled-pretrain zero-shot learning. The caption below asks: GPT-1 or GPT-1.5 moment of vision?" style="max-width:100%;height:auto;">
 </figure>
 
-<figure>
-<img src="../assets/images/paradigm-shift-computer-vision.png" alt="A before/after table titled 'A Paradigm Shift in Computer Vision'. In principle: task boundaries go from separate tasks and separate fields to all just prompts; pretraining objective from discriminative to generative; what you scale from labeled data to pretrained priors plus synthetic data; generalization from engineered per task to emergent from pretraining; task space from everything into language to vision stays in pixels. In practice: model from N backbones and N heads to one model and one head; training loss from balancing N losses to one unified loss; new task from build a model to make data; deployment from a chain of models to one model." style="max-width:100%;height:auto;">
-</figure>
-
 ---
 
 Of course, every field has its own "GPT moment" narrative these days. Slogans come and go, and every week seems to bring a new one. Rather than adding another slogan, I would like to share a few of my own, still immature, thoughts.
@@ -118,6 +114,10 @@ In this sense, our philosophy is remarkably similar to GPT-1. Task specification
 Another aspect that I find particularly interesting is the feed-forward design. Our work focuses primarily on perception tasks, which are often close to deterministic and typically require low latency. Multi-step diffusion, while powerful, is inherently slow and remains far from real-time deployment. During post-training, we therefore transformed the pretrained model into a single-forward-pass predictor, dramatically improving inference efficiency. Even our 1.3B model runs at around 13 FPS without any dedicated optimization.
 
 This design inevitably introduces a gap between pretraining and supervised fine-tuning, causing the model to sacrifice some of its original capabilities. On the other hand, iterative diffusion can also introduce excessive hallucination for vision tasks that are usually deterministic. I believe there remains much to be explored here. Interestingly, toward the end of this project, I revisited the GPT-1 paper and noticed that GPT-1 also introduced small architectural modifications during supervised fine-tuning. Besides, after finally building an any-task generalist model with performance comparable to specialized state-of-the-art systems, I realized GPT-1 shared a common architecture across tasks, but it still did not use exactly the same model weights for every task. It was fascinating to realize that, at different points in time and from different directions, researchers often find themselves stepping into the same river.
+
+<figure>
+<img src="../assets/images/paradigm-shift-computer-vision.png" alt="A before/after table titled 'A Paradigm Shift in Computer Vision'. In principle: task boundaries go from separate tasks and separate fields to all just prompts; pretraining objective from discriminative to generative; what you scale from labeled data to pretrained priors plus synthetic data; generalization from engineered per task to emergent from pretraining; task space from everything into language to vision stays in pixels. In practice: model from N backbones and N heads to one model and one head; training loss from balancing N losses to one unified loss; new task from build a model to make data; deployment from a chain of models to one model." style="max-width:100%;height:auto;">
+</figure>
 
 ## On Data
 
