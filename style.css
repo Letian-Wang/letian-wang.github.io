@@ -192,6 +192,16 @@ h2 {
   color: #a0a8b0;
 }
 
+.list-item.talk {
+  line-height: 1.5;
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+}
+
+.list-item.talk p.date {
+  text-indent: 0;
+}
+
 /**************************************************/
 /* Gallery of 3 preview videos. */
 
