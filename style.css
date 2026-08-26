@@ -194,8 +194,8 @@ h2 {
 
 .list-item.talk {
   line-height: 1.5;
-  padding-left: 1.5em;
-  text-indent: -1.5em;
+  padding-left: 4.5em;
+  text-indent: -4.5em;
 }
 
 .list-item.talk p.date {
