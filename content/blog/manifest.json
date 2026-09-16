@@ -1,5 +1,19 @@
 [
   {
+    "slug": "thoughts-after-attending-eccv",
+    "title": "Thoughts after attending ECCV",
+    "date": "2026-09-16",
+    "summary": "Notes on the frustration in the air at ECCV, what increasingly capable foundation models mean for traditional CV research, and how junior PhD students might choose problems that still matter.",
+    "tags": [
+      "research",
+      "conferences",
+      "phd life"
+    ],
+    "featured": false,
+    "readingTime": 5,
+    "author": "Letian Wang"
+  },
+  {
     "slug": "thoughts-after-building-a-general-purpose-vision-model",
     "title": "Thoughts after building a general-purpose vision model at DeepMind",
     "date": "2026-07-14",

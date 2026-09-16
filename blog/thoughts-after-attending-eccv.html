@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thoughts after attending ECCV &middot; Letian Wang</title>
+<meta name="description" content="Notes on the frustration in the air at ECCV, what increasingly capable foundation models mean for traditional CV research, and how junior PhD students might choose problems that still matter.">
+<link rel="canonical" href="https://letian-wang.github.io/blog/thoughts-after-attending-eccv.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Thoughts after attending ECCV">
+<meta property="og:description" content="Notes on the frustration in the air at ECCV, what increasingly capable foundation models mean for traditional CV research, and how junior PhD students might choose problems that still matter.">
+<meta property="og:url" content="https://letian-wang.github.io/blog/thoughts-after-attending-eccv.html">
+<meta property="og:site_name" content="Letian Wang">
+<meta property="article:published_time" content="2026-09-16">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Thoughts after attending ECCV">
+<meta name="twitter:description" content="Notes on the frustration in the air at ECCV, what increasingly capable foundation models mean for traditional CV research, and how junior PhD students might choose problems that still matter.">
+<link rel="icon" href="../images/ut_logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" id="hljs-theme" href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css">
+<link rel="stylesheet" href="../assets/css/theme.css">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../assets/css/blog.css">
+<script src="../assets/js/nav.js"></script>
+</head>
+<body data-page="blog">
+<div id="reading-progress"></div>
+<header class="site-nav">
+<div class="site-nav-inner">
+<a class="site-brand" href="../index.html">Letian Wang</a>
+<nav class="site-nav-links">
+<a class="nav-link" data-nav="home" href="../index.html">Home</a>
+<a class="nav-link" data-nav="blog" href="../blog.html">Blog</a>
+</nav>
+<div class="nav-right">
+<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+<span class="theme-icon-sun">&#9728;</span>
+<span class="theme-icon-moon">&#9789;</span>
+</button>
+</div>
+</div>
+</header>
+<main class="post-shell">
+<header class="post-header">
+<h1 class="post-title">Thoughts after attending ECCV</h1>
+<div class="post-meta">
+<span class="post-meta-author">Letian Wang</span>
+<span class="post-meta-sep">&middot;</span>
+<span class="post-meta-date">September 16, 2026</span>
+<span class="post-meta-sep">&middot;</span>
+<span class="post-meta-reading">5 min read</span>
+</div>
+<div class="post-meta-tags"><span class="tag">research</span> <span class="tag">conferences</span> <span class="tag">phd life</span></div>
+</header>
+<div class="post-layout">
+<nav class="post-toc" id="post-toc">
+<div class="post-toc-label">Contents</div>
+<ol id="post-toc-list"></ol>
+</nav>
+<article class="post-content" id="post-content"></article>
+</div>
+<div class="post-actions">
+<button id="copy-link-btn" class="post-action-btn">Copy link</button>
+<a id="share-x-btn" class="post-action-btn" target="_blank" rel="noopener">Share on X</a>
+<a id="share-linkedin-btn" class="post-action-btn" target="_blank" rel="noopener">Share on LinkedIn</a>
+<button id="like-btn" class="post-action-btn like-btn" type="button" aria-pressed="false"><span class="like-icon" aria-hidden="true">&#9825;</span><span id="like-count">&nbsp;</span></button>
+</div>
+<nav class="post-nav">
+<a class="post-nav-link post-nav-prev" href="thoughts-after-building-a-general-purpose-vision-model.html"><span class="post-nav-label">Previous</span><span class="post-nav-title">Thoughts after building a general-purpose vision model at DeepMind</span></a>
+<span></span>
+</nav>
+<section class="post-comments" id="post-comments">
+<div class="post-comments-label">Comments</div>
+<div id="giscus-comments" class="giscus-container"><p class="giscus-placeholder">Comments are powered by GitHub Discussions.</p></div>
+</section>
+</main>
+<script type="text/markdown" id="raw-markdown">
+Earlier, quite a few people who attended CVPR told me they came away pretty disappointed — including some extremely senior people in the field. At the time, I didn't fully understand why. But after I attended ECCV, I finally did.
+
+There was a surprising amount of frustration at the conference, especially since it happened right after the GPT-6 release. People were openly wondering what traditional CV research is going to look like from here, and how much of it will eventually just be absorbed by large foundation models.
+
+Actually, when I gave talks about GenCeption to a few academic groups, I had already started to see that kind of frustration.  
+GenCeption essentially leverages a large-scale pretrained diffusion model to build a single unified model that can match — and often outperform — specialized SOTA models across a surprisingly broad range of vision tasks, including DepthAnything3, D4RT, VGGT Omega, SAM3, Genmo, Lotus-2, and others. (The code is now open-sourced! [genception.github.io](https://genception.github.io/))  
+Quite a few PhD students told me the work made them question the direction of their own research.
+
+Part of me was happy, because it meant GenCeption had genuinely changed how some people thought about the problem. But that feeling was quickly outweighed by how much I felt bad and empathized with the junior PhD students. Some of them seemed genuinely unsure where to go next, especially when years of work on specialized architectures or training recipes could potentially be absorbed by a sufficiently capable general pretrained model. GPT-6 seems to be just creating that same feeling on a much broader scale.  
+It reminds me a lot of what happened with GPT-1 and BERT — tons of NLP PhDs' years of work and entire research directions perish overnight.
+
+There were even some pretty spicy takes floating around: "CV conferences are dead," "academia is becoming disconnected from where some of the most important progress is actually happening," "with increasingly noisy review systems and declining review quality, rejection sometimes is almost a signal of truly fundamental work," and "conferences increasingly reward work delicately engineered around established topics or methodologies, rather than work truly at the frontier." Maybe it's too harsh and too absolute, but the frustration behind them was definitely real.
+
+Conferences used to feel so fruitful, but this time it was hard to get genuinely excited. A lot of papers seemed to solve problems that no longer felt that important, or make progress that felt increasingly incremental. In the era of paper inflation, most people are busy trying to survive the research game, rather than thinking about how to go big after one or two years of diving deep into something. Most valuable skills such as critical thinking and taste never get trained well enough, from the beginning, all the way to the end.  
+On the other hand, most people simply don't have enough context or a big enough picture about what problem actually matters. They get stuck optimizing for local problems that their immediate environment tells them are important. I suffered from this for a long time too, but luckily I gradually started to see a much bigger picture.
+
+My advice to junior PhD students is: when you start a project, try to collect as much context as possible before you even begin — by all means.
+
+One way is to explore the boundaries of existing models as aggressively as you can. Play with the SOTA models extensively. Keep throwing harder and harder problems at them until they fundamentally break. Understand not just what they can do today, but where their capabilities end and why.  
+Another way is to put yourself wherever the strongest signals are. That could be a visionary academic lab, a team at an industry frontier lab, a genuinely insightful seminar, or simply a senior student or researcher who has seen a much broader landscape than you have. Expand your local context as much as possible.
+
+In an era where things are moving this fast, the information gap alone can be large enough to make years of carefully built work suddenly meaningless. Looking up and making sure you're walking in the right direction matters much more than keeping your head down and perfecting every step along the way — though, of course, being able to do both is the best :)  
+We stand on the shoulders of giants not just to go further, but to see further — to understand which problems will actually matter in the future.  
+If a problem is likely to be easily swallowed by large models once they have sufficient data, attention, or business interest, either avoid spending years engineering a specialized solution for it, or contribute the data and benchmarks that will help move the frontier forward faster. The problems that deserve the deepest thinking and genuinely new methods are the ones where existing models fundamentally cannot do the thing you need them to do.
+
+What I actually worry about is not that conferences will suddenly "die," but that if they start becoming genuinely irrelevant to where the frontier is moving, they will simply fade away.  
+And maybe one early sign of that is that a lot of people I used to want to meet aren't really coming to conferences anymore — they're busy with the big things happening at frontier labs, or, well, busy making money.  
+It reminds me a little of what happened to control theory as the field matured. As many of the core problems were gradually solved, parts of the community started inventing increasingly artificial use cases, making increasingly unrealistic assumptions, and playing increasingly elaborate mathematical games within them. That possibility genuinely scares me — not because the work becomes unnecessarily sophisticated, but because it can become disconnected from problems that actually matter.
+
+I still believe that conferences will remain places people genuinely want to come to: to exchange ideas, reconnect with old friends, meet new people, and simply have fun together. We just need to keep doing the right things to make that happen :)
+</script>
+<script type="application/json" id="post-meta">
+{"slug":"thoughts-after-attending-eccv","title":"Thoughts after attending ECCV","prev":{"slug":"thoughts-after-building-a-general-purpose-vision-model","title":"Thoughts after building a general-purpose vision model at DeepMind"},"next":null}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/javascript.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/bash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/json.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/lib/languages/yaml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="../assets/js/giscus-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<script src="../assets/js/blog-post.js"></script>
+</body>
+</html>

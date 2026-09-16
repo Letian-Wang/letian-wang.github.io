@@ -5,7 +5,14 @@
 <link>https://letian-wang.github.io/blog.html</link>
 <description>Research notes and essays by Letian Wang</description>
 <language>en-us</language>
-<lastBuildDate>Thu, 13 Aug 2026 04:03:35 GMT</lastBuildDate>
+<lastBuildDate>Wed, 16 Sep 2026 21:29:11 GMT</lastBuildDate>
+<item>
+<title>Thoughts after attending ECCV</title>
+<link>https://letian-wang.github.io/blog/thoughts-after-attending-eccv.html</link>
+<guid>https://letian-wang.github.io/blog/thoughts-after-attending-eccv.html</guid>
+<pubDate>Wed, 16 Sep 2026 00:00:00 GMT</pubDate>
+<description>Notes on the frustration in the air at ECCV, what increasingly capable foundation models mean for traditional CV research, and how junior PhD students might choose problems that still matter.</description>
+</item>
 <item>
 <title>Thoughts after building a general-purpose vision model at DeepMind</title>
 <link>https://letian-wang.github.io/blog/thoughts-after-building-a-general-purpose-vision-model.html</link>
