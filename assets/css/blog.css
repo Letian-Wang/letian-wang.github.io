@@ -254,11 +254,16 @@
   padding-left: 1.4em;
 }
 
+/* style.css resets list markers site-wide; numbered lists need them back. */
+.post-content ol { list-style: decimal; }
+
 .post-content li { margin-bottom: 0.4em; }
 
 .post-content a {
   color: var(--link);
   border-bottom: 1px solid var(--border) !important;
+  /* Long bare URLs (reference lists) wrap instead of overflowing on mobile. */
+  overflow-wrap: break-word;
 }
 
 .post-content a:hover { border-bottom-color: var(--link) !important; }

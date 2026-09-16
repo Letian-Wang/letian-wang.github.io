@@ -37,3 +37,9 @@ And maybe one early sign of that is that a lot of people I used to want to meet 
 It reminds me a little of what happened to control theory as the field matured. As many of the core problems were gradually solved, parts of the community started inventing increasingly artificial use cases, making increasingly unrealistic assumptions, and playing increasingly elaborate mathematical games within them. That possibility genuinely scares me — not because the work becomes unnecessarily sophisticated, but because it can become disconnected from problems that actually matter.
 
 I still believe that conferences will remain places people genuinely want to come to: to exchange ideas, reconnect with old friends, meet new people, and simply have fun together. We just need to keep doing the right things to make that happen :)
+
+## References
+
+1. [https://x.com/michael_j_black/status/2097585486466327003](https://x.com/michael_j_black/status/2097585486466327003)
+2. [https://x.com/han_junlin/status/2097952771710623890](https://x.com/han_junlin/status/2097952771710623890)
+3. [https://x.com/prime_cai/status/2098008244702908549](https://x.com/prime_cai/status/2098008244702908549)
