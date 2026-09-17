@@ -1,5 +1,5 @@
 ---
-title: A general-purpose vision model would eat everything, thoughts after developing GenCeption at Google DeepMind
+title: A general-purpose vision model would eat everything: thoughts after developing GenCeption at Google DeepMind
 date: 2026-07-14
 summary: Reflections on representation learning at scale, unified architectures, and synthetic data, after a project building a general-purpose vision model at DeepMind.
 tags: [research, multimodal learning, first principal]
