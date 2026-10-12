@@ -1,4 +1,11 @@
-/* Highlights section: horizontally sliding carousel of preview demos. */
+/* Highlights section: horizontally sliding carousel of preview demos.
+
+   The arrows are shown by default and the script only ever takes them away
+   when it has measured the track and found that it truly cannot scroll. Every
+   event that can change the layout - initial paint, video metadata arriving,
+   the Isotope grid re-laying the item out, scrolling, resizing - re-runs the
+   measurement, so a measurement taken too early can never leave the carousel
+   stuck without arrows. */
 (function () {
   const track = document.getElementById('previewsTrack');
   const carousel = track ? track.closest('.previews-carousel') : null;
@@ -6,53 +13,58 @@
   const nextBtn = carousel ? carousel.querySelector('.carousel-btn.next') : null;
 
   /* Nothing to drive (e.g. the markup is absent on this page) - stay quiet. */
-  if (!track || !prevBtn || !nextBtn) return;
+  if (!track || !carousel || !prevBtn || !nextBtn) return;
+
+  const GAP_FALLBACK = 10;
 
   function getGapPx() {
-    const gap = getComputedStyle(track).gap || '0px';
+    const gap = getComputedStyle(track).gap || '';
     const px = parseFloat(gap);
-    return isNaN(px) ? 0 : px;
+    return isNaN(px) ? GAP_FALLBACK : px;
   }
 
   function getSlideWidth() {
     const firstSlide = track.querySelector('.slide');
-    if (!firstSlide) return 0;
-    const rect = firstSlide.getBoundingClientRect();
-    return rect.width + getGapPx();
+    if (!firstSlide) return track.clientWidth;
+    const width = firstSlide.getBoundingClientRect().width + getGapPx();
+    /* Before layout settles a slide can measure 0; stepping by the viewport
+       width is a sane stand-in and still moves the track. */
+    return width > 1 ? width : track.clientWidth;
+  }
+
+  function maxScroll() {
+    return Math.max(0, track.scrollWidth - track.clientWidth);
   }
 
   function scrollBySlides(direction) {
     const dx = getSlideWidth() * (direction || 1);
-    track.scrollBy({ left: dx, behavior: 'smooth' });
+    const target = Math.max(0, Math.min(maxScroll(), track.scrollLeft + dx));
+    track.scrollTo({ left: target, behavior: 'smooth' });
   }
 
-  /* The furthest scroll positions actually reachable. Mandatory centre
-     snapping stops short of the raw scroll extent, so the first and last
-     slides' snap targets are taken into account too. */
-  function reachable() {
-    const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
-    const slides = track.querySelectorAll('.slide');
-    if (!slides.length) return { min: 0, max: maxScroll };
-    const trackLeft = track.getBoundingClientRect().left;
-    const snapTarget = function (el) {
-      const rect = el.getBoundingClientRect();
-      const offset = rect.left - trackLeft + track.scrollLeft;
-      return offset + rect.width / 2 - track.clientWidth / 2;
-    };
-    const clamp = function (v) { return Math.max(0, Math.min(maxScroll, v)); };
-    return {
-      min: clamp(snapTarget(slides[0])),
-      max: clamp(snapTarget(slides[slides.length - 1])),
-    };
+  function markEnd(btn, atEnd) {
+    btn.setAttribute('aria-disabled', atEnd ? 'true' : 'false');
   }
 
-  /* Disable (and so hide) an arrow when the track cannot scroll that way,
-     including the case where the slides are not wide enough to scroll at all. */
+  /* Decide whether the track can scroll and which end it sits at. The arrows
+     are hidden only when the track has been laid out (clientWidth > 0) and
+     still has no overflow - an unmeasured or in-flight layout shows them. */
   function updateButtons() {
-    const limits = reachable();
-    const scrollable = limits.max - limits.min > 1;
-    prevBtn.disabled = !scrollable || track.scrollLeft <= limits.min + 1;
-    nextBtn.disabled = !scrollable || track.scrollLeft >= limits.max - 1;
+    const laidOut = track.clientWidth > 0;
+    const overflow = track.scrollWidth - track.clientWidth;
+    const scrollable = !laidOut || overflow > 1;
+
+    carousel.classList.toggle('is-static', !scrollable);
+
+    if (!scrollable) {
+      markEnd(prevBtn, true);
+      markEnd(nextBtn, true);
+      return;
+    }
+
+    const limit = maxScroll();
+    markEnd(prevBtn, track.scrollLeft <= 1);
+    markEnd(nextBtn, track.scrollLeft >= limit - 1);
   }
 
   prevBtn.addEventListener('click', function () { scrollBySlides(-1); });
@@ -67,5 +79,28 @@
   track.addEventListener('scroll', updateButtons, { passive: true });
   window.addEventListener('resize', updateButtons);
   window.addEventListener('load', updateButtons);
+  document.addEventListener('DOMContentLoaded', updateButtons);
+
+  /* Media reports its real size late, and Isotope relays the grid item after
+     this script first runs; both change what the track can scroll. */
+  track.querySelectorAll('video, img').forEach(function (media) {
+    ['loadedmetadata', 'loadeddata', 'load', 'error'].forEach(function (type) {
+      media.addEventListener(type, updateButtons);
+    });
+  });
+
+  if (typeof ResizeObserver === 'function') {
+    const observer = new ResizeObserver(updateButtons);
+    observer.observe(track);
+    observer.observe(carousel);
+  }
+
+  /* A few spaced re-checks catch any relayout that fires no event we listen
+     for (web fonts, a late Isotope pass). Cheap, and strictly a safety net. */
+  [0, 100, 400, 1200, 3000].forEach(function (delay) {
+    setTimeout(updateButtons, delay);
+  });
+  if (typeof requestAnimationFrame === 'function') requestAnimationFrame(updateButtons);
+
   updateButtons();
 })();

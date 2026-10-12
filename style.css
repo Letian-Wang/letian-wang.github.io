@@ -265,21 +265,22 @@ h2 {
   flex: 0 0 calc((100% - (var(--slides-per-view) - 1) * 10px) / var(--slides-per-view));
   min-width: 0; /* the fixed flex-basis wins over the media's intrinsic width */
   scroll-snap-align: center;
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
+  display: block;
   height: 100%;
-  background: #000; /* letterbox bars for demos whose aspect ratio differs */
+  background: transparent; /* no black box: the media covers the slide edge to edge */
   border-radius: 5px;
+  overflow: hidden; /* the rounded corners clip the media */
   text-decoration: none;
 }
 
+/* Every demo fills its slide completely. A demo whose aspect ratio differs from
+   the slide is scaled up until it covers and the overflowing edges are cropped;
+   there are deliberately no letterbox or pillarbox bars. */
 .previews.track .slide video,
 .previews.track .slide img {
+  width: 100%;
   height: 100%;
-  width: auto;
-  max-width: 100%; /* a wide demo is letterboxed top/bottom, never cropped or overflowing */
-  object-fit: contain; /* contain, not cover: never crops a demo */
+  object-fit: cover;
   border-radius: 5px;
   display: block;
 }
@@ -288,6 +289,10 @@ h2 {
   border: none; /* keep the site's link underline off the slides */
 }
 
+/* Both arrows stay on screen, above the slides, for as long as the track can
+   scroll at all - reaching one end dims that arrow slightly but never removes
+   it. The only thing that takes them away is a track that provably cannot
+   scroll (see .is-static below). */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -299,18 +304,22 @@ h2 {
   color: #fff;
   border-radius: 5px; /* matches the site's media radius */
   cursor: pointer;
-  z-index: 1;
+  z-index: 3; /* above the track and the slides it scrolls */
   line-height: 48px;
   text-align: center;
   user-select: none;
   padding: 0;
   font-family: inherit;
   font-size: 1em;
+  opacity: 1;
+  visibility: visible;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4); /* reads against dark demos */
   transition: background-color 0.15s ease, opacity 0.15s ease;
 }
 
-.carousel-btn:hover {
-  background: rgba(0, 0, 0, 0.6);
+.carousel-btn:hover,
+.carousel-btn:focus-visible {
+  background: rgba(0, 0, 0, 0.7);
 }
 
 .carousel-btn.prev {
@@ -321,12 +330,17 @@ h2 {
   right: 6px;
 }
 
-/* Hide an arrow when the track cannot scroll any further that way. */
-.carousel-btn:disabled {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+/* At either end of the track: still plainly visible, just a little quieter. */
+.carousel-btn[aria-disabled='true'] {
+  opacity: 0.75;
   cursor: default;
+}
+
+/* The one case that hides the arrows: the script measured the track and it
+   genuinely has nothing to scroll to. Anything it cannot measure counts as
+   scrollable, so the arrows are shown. */
+.previews-carousel.is-static .carousel-btn {
+  display: none;
 }
 
 @media (max-width: 768px) {
