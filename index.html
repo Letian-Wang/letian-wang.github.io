@@ -139,6 +139,7 @@
   </style>
 <link rel="stylesheet" href="assets/css/theme.css">
   <script src="assets/js/nav.js"></script>
+  <script src="assets/js/previews-carousel.js" defer></script>
   <!-- Cloudflare Web Analytics -->
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "661e91306fb84e61ab569ce1f18327c1"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
@@ -294,38 +295,39 @@
       </div>
 
       <!-- Preview Videos -->
-      <div class="list-item highlight" data-category="highlight">
-        <div class="previews" style="height: 250px;">
-          <a href="https://genception.github.io/"
-                    style="display: flex;align-items: center;justify-content: center;"><video class="preview0" playsinline=""
-                                                                                                   muted="" autoplay="" loop="" >
-                                <source src="images/tokyo.mp4" type="video/mp4">
-                    </video></a>
-          
-                  <a href="https://distillnerf.github.io/"
-            style="display: flex;align-items: center;justify-content: center;"><video class="preview1" playsinline=""
-              muted="" autoplay="" loop="">
+      <div class="list-item highlight previews-carousel" data-category="highlight" aria-label="Preview videos">
+        <button class="carousel-btn prev" type="button" aria-label="Previous">&#10094;</button>
+
+        <div class="previews track" id="previewsTrack">
+
+          <a href="https://genception.github.io/" class="slide"><video class="preview0" playsinline="" muted=""
+              autoplay="" loop="">
+              <source src="images/tokyo.mp4" type="video/mp4">
+            </video></a>
+
+          <a href="https://distillnerf.github.io/" class="slide"><video class="preview1" playsinline="" muted=""
+              autoplay="" loop="">
               <source src="images/distillnerf.mp4" type="video/mp4">
             </video></a>
 
-          <a href="https://hao-shao.com/projects/lmdrive.html"
-            style="display: flex;align-items: center;justify-content: center;"><video class="preview2" playsinline=""
+          <a href="https://hao-shao.com/projects/lmdrive.html" class="slide"><video class="preview2" playsinline=""
               muted="" autoplay="" loop="">
               <source src="images/lmdrive.mp4" type="video/mp4">
             </video></a>
 
-          <div class="preview-pair">
-            <a href="https://github.com/Letian-Wang/asaprl"><video class="preview3" playsinline="" muted="" autoplay=""
-                loop="">
-                <source src="images/asaprl.mp4" type="video/mp4">
-              </video></a>
-            <a href="https://arxiv.org/abs/2010.14712"><video class="preview4" playsinline="" muted="" autoplay=""
-                loop="">
-                <source src="images/social.mp4" type="video/mp4">
-              </video></a>
+          <a href="https://github.com/Letian-Wang/asaprl" class="slide"><video class="preview3" playsinline="" muted=""
+              autoplay="" loop="">
+              <source src="images/asaprl.mp4" type="video/mp4">
+            </video></a>
 
-          </div>
+          <a href="https://arxiv.org/abs/2010.14712" class="slide"><video class="preview4" playsinline="" muted=""
+              autoplay="" loop="">
+              <source src="images/social.mp4" type="video/mp4">
+            </video></a>
+
         </div>
+
+        <button class="carousel-btn next" type="button" aria-label="Next">&#10095;</button>
       </div>
 
       <!-- Truncated Set of Highlights (Shown by Default) -->
