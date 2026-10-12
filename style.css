@@ -253,36 +253,47 @@ h2 {
   -webkit-overflow-scrolling: touch;
   height: 12.5em; /* fixed track height: this is what makes every demo the same height */
   padding: 0 40px; /* room for the arrow buttons */
-  --slides-per-view: 3; /* 3 on desktop */
+  scroll-padding: 0 40px; /* snap settles at the padding edge, clear of the arrows */
   scrollbar-width: none;
+  position: relative; /* makes the track the slides' offsetParent (see the arrow JS) */
 }
 
 .previews.track::-webkit-scrollbar {
   height: 0;
 }
 
+/* Slides are shrink-to-fit: the fixed track height sets their height and their
+   width follows the demo's own aspect ratio. Equal heights, varying widths. */
 .previews.track .slide {
-  flex: 0 0 calc((100% - (var(--slides-per-view) - 1) * 10px) / var(--slides-per-view));
-  min-width: 0; /* the fixed flex-basis wins over the media's intrinsic width */
-  scroll-snap-align: center;
-  display: block;
+  flex: 0 0 auto;
   height: 100%;
-  background: transparent; /* no black box: the media covers the slide edge to edge */
+  width: auto;
+  scroll-snap-align: start; /* widths differ, so align boundaries, not centres */
+  display: block;
+  background: transparent; /* nothing to letterbox, so never any dark fill */
   border-radius: 5px;
   overflow: hidden; /* the rounded corners clip the media */
   text-decoration: none;
 }
 
-/* Every demo fills its slide completely. A demo whose aspect ratio differs from
-   the slide is scaled up until it covers and the overflowing edges are cropped;
-   there are deliberately no letterbox or pillarbox bars. */
+/* Mandatory snapping needs a reachable snap position for the last slide: there
+   is not enough content left to bring it to the start of the track, so it
+   snaps against the end instead - which is exactly the end of the scroll. */
+.previews.track .slide:last-child {
+  scroll-snap-align: end;
+}
+
+/* The media is laid out at the track's height and keeps its natural ratio, so
+   the slide box matches the demo exactly: nothing is cropped and there are no
+   letterbox or pillarbox bars to fill. `object-fit: contain` is a no-op here
+   and only guards against a box that somehow does not match. */
 .previews.track .slide video,
 .previews.track .slide img {
-  width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 5px;
+  width: auto;
   display: block;
+  object-fit: contain;
+  border-radius: 5px;
 }
 
 .previews a:hover {
@@ -343,9 +354,16 @@ h2 {
   display: none;
 }
 
+/* Narrow screens: widths are intrinsic now, so the only lever that keeps the
+   widest demo inside the visible track is the track height - cropping it or
+   letting the page scroll sideways is not an option. The height is therefore
+   whatever makes that demo fit between the arrows, and never more than the
+   desktop height. 2.51 is the widest demo's aspect ratio (424:169) and 112px
+   is the page's 2 x 1em side padding plus the track's 2 x 40px arrow inset.
+   At 400px wide that works out at ~115px tall and a ~288px widest demo. */
 @media (max-width: 768px) {
   .previews.track {
-    --slides-per-view: 1;
+    height: min(12.5em, calc((100vw - 112px) / 2.51));
   }
 }
 

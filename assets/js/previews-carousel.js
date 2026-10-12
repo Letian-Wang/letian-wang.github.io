@@ -15,31 +15,53 @@
   /* Nothing to drive (e.g. the markup is absent on this page) - stay quiet. */
   if (!track || !carousel || !prevBtn || !nextBtn) return;
 
-  const GAP_FALLBACK = 10;
-
-  function getGapPx() {
-    const gap = getComputedStyle(track).gap || '';
-    const px = parseFloat(gap);
-    return isNaN(px) ? GAP_FALLBACK : px;
-  }
-
-  function getSlideWidth() {
-    const firstSlide = track.querySelector('.slide');
-    if (!firstSlide) return track.clientWidth;
-    const width = firstSlide.getBoundingClientRect().width + getGapPx();
-    /* Before layout settles a slide can measure 0; stepping by the viewport
-       width is a sane stand-in and still moves the track. */
-    return width > 1 ? width : track.clientWidth;
-  }
-
   function maxScroll() {
     return Math.max(0, track.scrollWidth - track.clientWidth);
   }
 
+  /* The track reserves room for the arrows with horizontal padding, and
+     `scroll-padding` keeps scroll-snap settling on that same inset, so the
+     scroll offset that brings a slide to the start of the visible track is its
+     offset inside the track minus that inset. */
+  function startInset() {
+    const style = getComputedStyle(track);
+    const scrollPad = parseFloat(style.scrollPaddingLeft); /* NaN when `auto` */
+    if (!isNaN(scrollPad)) return scrollPad;
+    const pad = parseFloat(style.paddingLeft);
+    return isNaN(pad) ? 0 : pad;
+  }
+
+  /* Slides are sized by their own aspect ratio now, so every step is a
+     different width and "one slide width" measured off the first slide would
+     be wrong for all the others. Read the boundaries off the layout instead:
+     the track is positioned, so it is the slides' offsetParent and
+     `offsetLeft` is each slide's own position within it. */
+  function slideStarts() {
+    const inset = startInset();
+    const starts = [];
+    track.querySelectorAll('.slide').forEach(function (slide) {
+      starts.push(Math.max(0, slide.offsetLeft - inset));
+    });
+    return starts.sort(function (a, b) { return a - b; });
+  }
+
+  /* Scroll to the next (or previous) slide boundary. The 1px slack absorbs the
+     fractional scroll offsets a snapped track can come to rest on. */
   function scrollBySlides(direction) {
-    const dx = getSlideWidth() * (direction || 1);
-    const target = Math.max(0, Math.min(maxScroll(), track.scrollLeft + dx));
-    track.scrollTo({ left: target, behavior: 'smooth' });
+    const starts = slideStarts();
+    const limit = maxScroll();
+    const here = track.scrollLeft;
+    let target;
+
+    if ((direction || 1) > 0) {
+      target = starts.find(function (x) { return x > here + 1; });
+      if (target === undefined) target = limit;
+    } else {
+      const before = starts.filter(function (x) { return x < here - 1; });
+      target = before.length ? before[before.length - 1] : 0;
+    }
+
+    track.scrollTo({ left: Math.max(0, Math.min(limit, target)), behavior: 'smooth' });
   }
 
   function markEnd(btn, atEnd) {
