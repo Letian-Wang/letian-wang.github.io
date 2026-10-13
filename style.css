@@ -525,7 +525,7 @@ h3 a:hover {
 
 .research-overview-video {
   display: block;
-  width: 100%;
+  width: 87.5%; /* one eighth smaller */
   max-width: 100%;
   height: auto;
   border-radius: 8px;
