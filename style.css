@@ -530,3 +530,9 @@ h3 a:hover {
   border-radius: 8px;
   margin: 0 0 1.5em 0;
 }
+
+/* Publication titles: bold so they stand out from the author line. */
+.list-item.publication h3,
+.list-item.publication h3 a {
+  font-weight: 700;
+}
