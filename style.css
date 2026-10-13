@@ -507,3 +507,26 @@ h3 a:hover {
   width: 55px;
   text-align: center;
 }
+
+/**************************************************/
+/* Publication entries: contain the floated thumbnail so neighbouring
+   entries (e.g. ForeSight / OpenNav) cannot overlap. */
+.list-item.publication {
+  display: flow-root;
+}
+
+/* Research overview video: full-width row, large enough to be legible. */
+.list-item.highlight.research-overview {
+  display: block;
+  clear: both;
+  margin: 1.2rem 0;
+  line-height: 0;
+}
+
+.research-overview-video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
