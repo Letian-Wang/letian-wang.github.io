@@ -688,6 +688,17 @@
 
 
       <!-- Publications -->
+      <div class="list-item publication description pub-view-toggle" data-category="publication">
+        <div id="pub-view-filters" class="button-group" role="group" aria-label="Publication list view">
+          <button class="pub-view-button is-checked" type="button" data-pub-view="selected"
+            aria-pressed="true">Selected</button>
+          <button class="pub-view-button" type="button" data-pub-view="full"
+            aria-pressed="false">Full publication list</button>
+        </div>
+        <p class="pub-view-note">Switch views above, or see my&nbsp;<a
+            href="https://scholar.google.com/citations?hl=en&amp;user=HEzCWisAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar profile</a>.</p>
+      </div>
+
       <div class="list-item publication description" data-category="talk">
         See my&nbsp;<a href="https://scholar.google.com/citations?hl=en&user=HEzCWisAAAAJ">Google Scholar profile</a>&nbsp;for a more up-to-date list.
       </div>
@@ -780,7 +791,7 @@
         </div>
       </div>
 
-      <div class="list-item publication" data-category="publication">
+      <div class="list-item publication selected-pub" data-category="publication" data-selected-order="2">
         <div class="project-description no-thumbnail">
           <h3><a href="https://arxiv.org/abs/2505.09074">
             Trends in Motion Prediction Toward Deployable and Generalizable Autonomy: A Revisit and Perspectives
@@ -864,7 +875,7 @@
         </div>
       </div>
 
-      <div class="list-item publication" data-category="publication">
+      <div class="list-item publication selected-pub" data-category="publication" data-selected-order="1">
         <div class="project-description no-thumbnail">
           <h3><a href="https://arxiv.org/abs/2511.11793">
             MiroThinker: Pushing the Performance Boundaries of Open-Source Research Agents via Model, Context, and Interactive Scaling
@@ -923,7 +934,7 @@
         </div>
       </div>
 
-      <div class="list-item publication" data-category="publication">
+      <div class="list-item publication selected-pub" data-category="publication" data-selected-order="3">
         <a href="https://arxiv.org/pdf/2406.12095" class="thumbnail">
           <img src="images/smartpretrain.png" alt="" />
           <!-- <video playsinline="" muted="" autoplay="" loop="" width="180px">
@@ -949,7 +960,7 @@
         </div>
       </div>
 
-      <div class="list-item publication" data-category="publication">
+      <div class="list-item publication selected-pub" data-category="publication" data-selected-order="4">
         <a href="https://arxiv.org/pdf/2406.12095" class="thumbnail">
           <video playsinline="" muted="" autoplay="" loop="" width="180px">
             <source src="images/distillnerf.mp4" type="video/mp4">
@@ -975,7 +986,7 @@
         </div>
       </div>
 
-      <div class="list-item publication" data-category="publication">
+      <div class="list-item publication selected-pub" data-category="publication" data-selected-order="5">
         <a href="https://arxiv.org/pdf/2403.16999" class="thumbnail">
           <img src="images/cot.png" alt="" />
         </a>
@@ -1023,7 +1034,7 @@
         </div>
       </div>
 
-      <div class="list-item publication" data-category="publication">
+      <div class="list-item publication selected-pub" data-category="publication" data-selected-order="6">
         <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Shao_LMDrive_Closed-Loop_End-to-End_Driving_with_Large_Language_Models_CVPR_2024_paper.pdf"
           class="thumbnail">
           <video playsinline="" muted="" autoplay="" loop="" width="180px">
@@ -1073,7 +1084,7 @@
         </div>
       </div>
 
-      <div class="list-item publication" data-category="publication">
+      <div class="list-item publication selected-pub" data-category="publication" data-selected-order="7">
         <a href="https://arxiv.org/pdf/2305.04412" class="thumbnail">
           <video playsinline="" muted="" autoplay="" loop="" width="180px">
             <source src="images/asaprl.mp4" type="video/mp4">
@@ -1122,7 +1133,7 @@
         </div>
       </div>
 
-      <div class="list-item publication" data-category="publication">
+      <div class="list-item publication selected-pub" data-category="publication" data-selected-order="8">
         <a href="https://www.nowpublishers.com/article/Details/ROB-078" class="thumbnail">
           <img src="images/book1.png" alt="" />
         </a>
@@ -1143,7 +1154,7 @@
         </div>
       </div>
 
-      <div class="list-item publication" data-category="publication">
+      <div class="list-item publication selected-pub" data-category="publication" data-selected-order="9">
         <a href="https://proceedings.mlr.press/v205/shao23a/shao23a.pdf" class="thumbnail">
           <video playsinline="" muted="" autoplay="" loop="" width="180px">
             <source src="images/interfuser.mp4" type="video/mp4">
@@ -1250,7 +1261,7 @@
         </div>
       </div>
 
-      <div class="list-item publication" data-category="publication">
+      <div class="list-item publication selected-pub" data-category="publication" data-selected-order="10">
         <a href="https://arxiv.org/pdf/2111.00788" class="thumbnail">
           <video playsinline="" muted="" autoplay="" loop="" width="180px">
             <source src="images/hatn.mp4" type="video/mp4">
@@ -1273,7 +1284,7 @@
         </div>
       </div>
 
-      <div class="list-item publication" data-category="publication">
+      <div class="list-item publication selected-pub" data-category="publication" data-selected-order="11">
         <a href="https://arxiv.org/pdf/2010.14712" class="thumbnail">
           <video playsinline="" muted="" autoplay="" loop="" width="180px">
             <source src="images/social.mp4" type="video/mp4">
@@ -1295,7 +1306,7 @@
         </div>
       </div>
 
-      <div class="list-item publication" data-category="publication">
+      <div class="list-item publication selected-pub" data-category="publication" data-selected-order="12">
         <a href="" class="thumbnail">
           <video playsinline="" muted="" autoplay="" loop="" width="180px">
             <source src="images/vtol.mp4" type="video/mp4">
@@ -1406,15 +1417,61 @@
           weight: function (itemElem) {
             var weight = $(itemElem).find('.weight').text();
             return parseFloat(weight.replace(/[\(\)]/g, ''));
+          },
+          // Order of the Selected publication view. Notes (and the toggle
+          // itself) sort above the papers; everything else keeps DOM order.
+          selectedOrder: function (itemElem) {
+            var order = itemElem.getAttribute('data-selected-order');
+            if (order !== null) {
+              return parseInt(order, 10);
+            }
+            return $(itemElem).hasClass('description') ? -1 : 9999;
           }
         }
       });
 
+      // Publication list view. Always starts on 'selected'; it is kept (but
+      // not persisted) while the visitor moves between the category tabs.
+      var pubView = 'selected';
+
+      function current_filter_value() {
+        var filterValue = localStorage.getItem('filterValue');
+        return filterValue == null ? '.highlight' : filterValue;
+      }
+
+      // Single place that talks to Isotope, so the category tabs and the
+      // Selected/Full toggle can never disagree about filter or order.
+      function apply_isotope() {
+        var filterValue = current_filter_value();
+        if (filterValue == '.publication' && pubView == 'selected') {
+          $grid.isotope({
+            filter: '.publication.description, .publication.selected-pub',
+            sortBy: 'selectedOrder'
+          });
+        } else {
+          $grid.isotope({ filter: filterValue, sortBy: 'original-order' });
+        }
+      }
+
+      function sync_pub_view_buttons() {
+        $('#pub-view-filters button').each(function () {
+          var isChecked = $(this).attr('data-pub-view') == pubView;
+          $(this).toggleClass('is-checked', isChecked);
+          this.setAttribute('aria-pressed', isChecked ? 'true' : 'false');
+        });
+      }
+
       // Bind filter button click.
       $('#filters').on('click', 'button', function () {
-        var filterValue = $(this).attr('data-filter');
-        localStorage.setItem('filterValue', filterValue);
-        $grid.isotope({ filter: filterValue });
+        localStorage.setItem('filterValue', $(this).attr('data-filter'));
+        apply_isotope();
+      });
+
+      // Bind Selected / Full publication list toggle.
+      $('#pub-view-filters').on('click', 'button', function () {
+        pubView = $(this).attr('data-pub-view');
+        sync_pub_view_buttons();
+        apply_isotope();
       });
 
       // Change is-checked class on buttons.
@@ -1428,12 +1485,8 @@
 
       function update_isotope() {
         // Retrieve cached button click.
-        var defaultFilterValue = localStorage.getItem('filterValue');
-        if (defaultFilterValue == null) {
-          defaultFilterValue = ".highlight"
-        }
-        $grid.isotope({ filter: defaultFilterValue });
-        var buttons = document.getElementsByClassName("button");
+        var defaultFilterValue = current_filter_value();
+        var buttons = document.querySelectorAll('#filters .button');
         for (var currButton of buttons) {
           if (currButton.getAttribute('data-filter') == defaultFilterValue) {
             currButton.classList.add('is-checked');
@@ -1441,6 +1494,8 @@
             currButton.classList.remove('is-checked');
           }
         }
+        sync_pub_view_buttons();
+        apply_isotope();
       }
 
       function toggle_bio() {

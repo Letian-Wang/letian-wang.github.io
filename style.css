@@ -368,6 +368,54 @@ h2 {
 }
 
 /**************************************************/
+/* Selected / full publication list toggle. */
+
+/* `.publication` is a flex row (thumbnail + text) and is declared further
+   down, so the toggle needs the extra class to win and stack instead. */
+.list-item.pub-view-toggle {
+  display: block;
+  margin-top: 1.5em;
+}
+
+#pub-view-filters {
+  margin-bottom: 0.2em;
+}
+
+.pub-view-button {
+  display: inline-block;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  color: #a0a8b0;
+  font-family: inherit;
+  font-size: 1em;
+  line-height: 1.5em;
+  float: left;
+  margin: 0 1.2em 0 0;
+  padding: 0 0 0.1em 0;
+}
+
+.pub-view-button:hover {
+  color: #150c21;
+}
+
+.pub-view-button:active,
+.pub-view-button.is-checked {
+  color: #150c21;
+  font-weight: bold;
+  border-bottom-color: #150c21;
+}
+
+.pub-view-note {
+  clear: both;
+  padding-top: 0.2em;
+  color: #a0a8b0;
+  line-height: 1.5em;
+}
+
+/**************************************************/
 /* Buttons for showing more or less highlights. */
 
 .toggle-button {
