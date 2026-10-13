@@ -515,7 +515,13 @@ h3 a:hover {
   display: flow-root;
 }
 
-/* Research overview video: sits under the intro links, matching the text width. */
+/* Research overview video: its own row at the top of the highlights. */
+.list-item.highlight.research-overview {
+  display: block;
+  clear: both;
+  line-height: 0;
+}
+
 .research-overview-video {
   display: block;
   width: 100%;
