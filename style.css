@@ -440,6 +440,11 @@ h3 a:hover {
   float: left;
 }
 
+/* Entries without a thumbnail let the text use the full column width. */
+.project-description.no-thumbnail {
+  width: 100%;
+}
+
 /**************************************************/
 /* Subtle footer at the bottom of the page. */
 
