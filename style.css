@@ -504,6 +504,9 @@ h3 a:hover {
 }
 
 .container > .date {
+  /* Fixed column: short dates (e.g. "2026") must not shrink, or the logo and
+     text of that entry slide left out of alignment with the other entries. */
+  flex: 0 0 55px;
   width: 55px;
   text-align: center;
 }
