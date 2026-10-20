@@ -539,3 +539,11 @@ h3 a:hover {
 .list-item.publication h3 a {
   font-weight: 700;
 }
+
+/* Experience entries without a logo: keep the logo column so the text still
+   lines up with the other entries. */
+.container > .logo-placeholder {
+  flex: 0 0 55px;
+  width: 55px;
+  padding: 10px 20px 0px 40px;
+}
